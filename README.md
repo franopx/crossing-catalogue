@@ -7,6 +7,13 @@ Crossing Catalogue es una aplicación complementaria para tu partida de Animal C
 - Descubre qué aldeano es el mejor para tu isla utilizando la funcionalidad de aldeano misterioso, un cuestionario donde dependiendo de lo que respondas se te sugerirá un aldeano que se adecúe a tus respuestas
 - Mantén el progreso de tu isla, pudiendo marcar las construcciones que llevas, los aldeanos que han llegado a tu partida, las colecciones de objetos para el museo, pesca e insectos.
 
+## Estructura del proyecto
+El proyecto está estructurado de forma modular, separando la lógica, componentes y widgets en distintos directorios:
+- lib/domain/entities: Contiene las clases de información como los aldeanos, objetos de colección, preguntas y listas.
+- lib/pages: Contiene las pantallas que se le mostrarán al usuario.
+- lib/providers: Contiene las clases vinculadas a provider, que permite guardar preferencias localmente.
+- lib/services: Contiene clases que vinculan otros servicios con el proyecto, como las APIs y bases de datos.
+
 ## Desarrolladores
 - Matías Oyarzún
 - Francisco Galeno
