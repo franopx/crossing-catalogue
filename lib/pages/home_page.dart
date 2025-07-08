@@ -14,29 +14,13 @@ class HomePage extends StatefulWidget{
 
   final String title;
   var logger = Logger();
-  var villagerRequest = ServiceVillager('lol');
-  var villagerJson;
-  final villagerImageUrl = <String>[];
 
-  Future<List<String>> getJson() async {
-    villagerJson = await villagerRequest.getVillager('game=NH');
-
-    var parsedJson = jsonDecode(villagerJson);
-    List<dynamic> villagerList = parsedJson;
-
-    for (var villager in villagerList) {
-      villagerImageUrl.add(villager['image_url']);
-    }
-
-    return villagerImageUrl;
-
-  }
 
 
 
   @override
   State<StatefulWidget> createState() {
-    getJson();
+    //getJson();
     return HomePageState();
   }
 
@@ -51,19 +35,12 @@ class HomePageState extends State<HomePage> {
 
   var urlList = <String>[];
 
-  void fetchUrl() async {
-    urlList = await widget.getJson();
-  }
+
 
   @override
   Widget build(BuildContext context) {
 
-    fetchUrl();
 
-    if (urlList.isEmpty) {
-      fetchUrl();
-      return Center(child: CircularProgressIndicator());
-    }
 
     return Scaffold(
       appBar: AppBar(
@@ -73,19 +50,6 @@ class HomePageState extends State<HomePage> {
       body: Column(
         children: [
           // Botón superior fijo
-          SizedBox(
-            width: double.infinity,
-            height: 48,
-            child: ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  imageIndex = Random().nextInt(widget.villagerImageUrl.length);
-                  selectedImage = widget.villagerImageUrl[imageIndex];
-                });
-              },
-              child: const Text('Nuevo aldeano'),
-            ),
-          ),
 
           // Imagen o contenido debajo
           Expanded(
