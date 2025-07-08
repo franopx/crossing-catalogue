@@ -1,12 +1,13 @@
-class SeaCreature {
-  String name;
+import 'package:crossing_catalogue/domain/entities/collection_entity.dart';
+
+class SeaCreature extends Collection {
   String month;
   String shadowSize;
   String shadowMovement;
   String imageUrl;
 
   SeaCreature(
-    this.name,
+    super.name,
     this.month,
     this.shadowSize,
     this.shadowMovement,

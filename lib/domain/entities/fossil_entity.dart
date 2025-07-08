@@ -1,6 +1,7 @@
-class Fossil {
-  String name;
+import 'package:crossing_catalogue/domain/entities/collection_entity.dart';
+
+class Fossil extends Collection {
   String fossilGroup;
 
-  Fossil(this.name, this.fossilGroup);
+  Fossil(super.name, this.fossilGroup);
 }
