@@ -31,10 +31,14 @@ class _VillagerListWidgetState extends State<VillagerListWidget> {
 
   Future<void> fetchVillagers() async {
     allVillagers = await list.getJson();
-    setState(() {
-      isLoading = false;
-      applyFilters();
-    });
+    
+    if(mounted){
+      setState(() {
+        isLoading = false;
+        applyFilters();
+      });
+    }
+
   }
 
   void applyFilters() {

@@ -2,7 +2,12 @@ import 'package:crossing_catalogue/widgets/villager_list_widget.dart';
 import 'package:flutter/material.dart';
 
 class VillagerCataloguePage extends StatefulWidget {
-  VillagerCataloguePage({super.key});
+  const VillagerCataloguePage({
+    super.key, 
+    required this.title,
+    });
+
+  final String title;
 
   @override
   State<StatefulWidget> createState() {
@@ -11,10 +16,16 @@ class VillagerCataloguePage extends StatefulWidget {
 }
 
 class VillagerCataloguePageState extends State<VillagerCataloguePage> {
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Villagers'),),
+      //appBar: AppBar(title: Text('Villagers'),),
       body: VillagerListWidget(),
     );
   }

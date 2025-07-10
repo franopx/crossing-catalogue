@@ -11,7 +11,7 @@ class VillagerList {
   //var logger = Logger();
 
   Future<List<Villager>> getJson() async {
-    villagerJson = await villagerRequest.getVillager('game=NH');
+    villagerJson = await villagerRequest.getVillager('game=nh&nhdetails=true');
     var parsedJson = jsonDecode(villagerJson);
     List<dynamic> villagerListJson = parsedJson;
 
@@ -19,7 +19,7 @@ class VillagerList {
       var name = villagerData['name'];
       var species = villagerData['species'];
       var personality = villagerData['personality'];
-      var birthmonth = villagerData['birthmonth'];
+      var birthmonth = villagerData['birthday_month'];
 
       final nhDetailsData = villagerData['nh_details'];
       var styles = List<String>.from(nhDetailsData['fav_styles']);
@@ -38,8 +38,6 @@ class VillagerList {
         hobby,
         imageUrl,
       );
-
-      //logger.d(villager.name);
 
       villagerList.add(villager);
     }

@@ -1,4 +1,5 @@
 import 'package:crossing_catalogue/pages/home_page.dart';
+import 'package:crossing_catalogue/pages/nav_page.dart';
 import 'package:crossing_catalogue/pages/villager_catalogue_page.dart';
 import 'package:crossing_catalogue/services/api_service.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: VillagerCataloguePage()
+      home: NavPage(title: 'Crossing Catalogue'),
+    
     );
   }
 }
