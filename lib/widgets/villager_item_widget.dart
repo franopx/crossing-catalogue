@@ -21,7 +21,9 @@ class VillagerItemWidget extends StatelessWidget {
           ),
         ),
         title: Text(villager.name),
-        subtitle: Text('${villager.species} · ${villager.personality}'),
+        subtitle: Text(
+          '${villager.species} · ${villager.personality} · ${villager.hobby} · ${villager.styles[0]}',
+        ),
       ),
     );
   }
