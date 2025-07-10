@@ -1,81 +1,37 @@
 import 'package:crossing_catalogue/domain/entities/question_entity.dart';
 import 'package:flutter/material.dart';
 
-class QuestionWidget extends StatefulWidget {
-  final bool isIslandQuiz;
-  const QuestionWidget({super.key, required this.isIslandQuiz});
+class QuestionWidget extends StatelessWidget {
+  final Question question;
+  final void Function(int) onOptionSelected;
 
-  @override
-  State<StatefulWidget> createState() => _QuestionState();
-}
-
-class _QuestionState extends State<QuestionWidget> {
-  int currentQuestionIndex = 0;
-  List<Question> questions = [];
-  Map<String, Map<String, int>> attributeVotes = {};
-
-  @override
-  void initState() {
-    super.initState();
-    questions = widget.isIslandQuiz ? islandQuiz : personalityQuiz;
-  }
-
-  void handleAnswer(int selectedIndex) {
-    final current = questions[currentQuestionIndex];
-    final Map<String, Map<String, int>> effects =
-        current.effects[selectedIndex];
-
-    effects.forEach((attribute, valuesWithWeight) {
-      attributeVotes.putIfAbsent(attribute, () => {});
-      valuesWithWeight.forEach((value, weight) {
-        attributeVotes[attribute]!.update(
-          value,
-          (count) => count + weight,
-          ifAbsent: () => weight,
-        );
-      });
-    });
-
-    setState(() {
-      currentQuestionIndex++;
-    });
-  }
-
-  String buildSearchQuery(Map<String, Map<String, int>> votes) {
-    final result = <String, String>{};
-
-    for (var entry in votes.entries) {
-      final attribute = entry.key;
-      final valueVotes = entry.value;
-
-      if (valueVotes.isEmpty) continue;
-
-      final topEntry = valueVotes.entries.reduce(
-        (a, b) => a.value >= b.value ? a : b,
-      );
-      result[attribute] = topEntry.key;
-    }
-
-    return result.entries
-        .map(
-          (e) =>
-              '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}',
-        )
-        .join('&');
-  }
+  const QuestionWidget({
+    super.key,
+    required this.question,
+    required this.onOptionSelected,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Card(
+      margin: const EdgeInsets.all(16),
+      elevation: 4,
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(question.question, style: const TextStyle(fontSize: 18)),
+            const SizedBox(height: 12),
+            ...List.generate(question.answers.length, (i) {
+              return ElevatedButton(
+                onPressed: () => onOptionSelected(i),
+                child: Text(question.answers[i]),
+              );
+            }),
+          ],
+        ),
+      ),
+    );
   }
 }
-
-List<Question> islandQuiz = [
-  Question(
-    '¿Qué estética tiene tu isla?',
-    ['Rural', 'Tierna', 'Citadina', 'Medieval', 'Natural', 'Desorden'],
-    [{}, {}, {}, {}, {}, {}],
-  ),
-];
-
-List<Question> personalityQuiz = [];
