@@ -30,28 +30,42 @@ class NavPageState extends State<NavPage> {
 
   bool isOnline = false;
 
-  Future<bool> onlineCheck() async {
-    return await NetworkStatus.isOnline;
+  Future<void> onlineCheck() async {
+      bool check = await NetworkStatus.isOnline;
+    
+    setState(() {
+      isOnline = check;
+    });
+    
+  }
+
+  @override
+  void activate() {
+    onlineCheck();
+    super.activate();
   }
 
   Widget buildContent() {
     switch(currentPage) {
       case 1:
-        return QuizPage(
-        title: 'test de personalidad',
-        questions: personalityQuestions,
-      );
+        return isOnline ? 
+          QuizPage(
+            title: 'test de personalidad',
+            questions: personalityQuestions,) : 
+          Center(child: const Text('No internet, try again later.'));
 
       case 2: 
         setState(() {
           currentTitle = 'Villagers';
         });
-        return VillagerCataloguePage(title: 'Catalogue');
+        return isOnline ? 
+          VillagerCataloguePage(title: 'Catalogue', isOnline: isOnline,) : 
+          Center(child: const Text('No internet, try again later.'));
       case 3:
         setState(() {
           currentTitle = 'Collection';
         });
-        return CollectionPage(title: 'Collection');
+        return CollectionPage(title: 'Collection', isOnline: isOnline);
       default: 
         setState(() {
           currentTitle = 'Crossing Catalogue';
@@ -81,10 +95,10 @@ Widget build(BuildContext context) {
             right: 0,
             bottom: 0,
             child: Container(
-              color: Colors.red,
+              color: Colors.blueGrey,
               padding: EdgeInsets.all(8),
               child: Text(
-                'NO INTERNET',
+                'Offline Mode',
                 style: TextStyle(color: Colors.white),
                 textAlign: TextAlign.center,
               ),
@@ -100,6 +114,7 @@ Widget build(BuildContext context) {
 }
 
   void onNavTap(value) {
+    onlineCheck();
     setState(() {
       currentPage = value;
     });

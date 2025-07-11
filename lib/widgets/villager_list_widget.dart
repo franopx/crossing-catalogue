@@ -17,6 +17,7 @@ class _VillagerListWidgetState extends State<VillagerListWidget> {
   List<Villager> displayedVillagers = [];
   bool isLoading = true;
 
+  bool showFilters = false;
   String searchQuery = '';
   String selectedPersonality = 'All';
   String selectedSpecies = 'All';
@@ -101,105 +102,132 @@ class _VillagerListWidgetState extends State<VillagerListWidget> {
       children: [
         Padding(
           padding: const EdgeInsets.all(8),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
-                'Search',
-                style: TextStyle(fontWeight: FontWeight.bold),
+                'Villagers',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 4),
-              TextField(
-                decoration: const InputDecoration(
-                  hintText: 'Search by name...',
-                  prefixIcon: Icon(Icons.search),
-                  border: OutlineInputBorder(),
-                ),
-                onChanged: (value) {
-                  searchQuery = value;
-                  applyFilters();
+              IconButton(
+                icon: Icon(showFilters ? Icons.filter_alt_off : Icons.filter_alt),
+                tooltip: showFilters ? 'Hide filters' : 'Show filters',
+                onPressed: () {
+                  setState(() {
+                    showFilters = !showFilters;
+                  });
                 },
               ),
-              const SizedBox(height: 12),
-              const Text(
-                'Filter by',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 4),
-              Row(
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8),
+          child: Visibility(
+            visible: showFilters,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Expanded(
-                    child: DropdownButton<String>(
-                      isExpanded: true,
-                      value: selectedPersonality,
-                      onChanged: (value) {
-                        if (value != null) {
-                          selectedPersonality = value;
-                          applyFilters();
-                        }
-                      },
-                      items: personalities.map((p) {
-                        return DropdownMenuItem(value: p, child: Text(p));
-                      }).toList(),
-                    ),
+                  const Text(
+                    'Search',
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: DropdownButton<String>(
-                      isExpanded: true,
-                      value: selectedSpecies,
-                      onChanged: (value) {
-                        if (value != null) {
-                          selectedSpecies = value;
-                          applyFilters();
-                        }
-                      },
-                      items: speciesList.map((s) {
-                        return DropdownMenuItem(value: s, child: Text(s));
-                      }).toList(),
+                  const SizedBox(height: 4),
+                  TextField(
+                    decoration: const InputDecoration(
+                      hintText: 'Search by name...',
+                      prefixIcon: Icon(Icons.search),
+                      border: OutlineInputBorder(),
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 12),
-              const Text(
-                'Sort by',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 4),
-              Row(
-                children: [
-                  Expanded(
-                    child: DropdownButton<String>(
-                      isExpanded: true,
-                      value: sortField,
-                      onChanged: (value) {
-                        if (value != null) {
-                          sortField = value;
-                          applyFilters();
-                        }
-                      },
-                      items: const [
-                        DropdownMenuItem(value: 'name', child: Text('Name')),
-                        DropdownMenuItem(value: 'personality', child: Text('Personality')),
-                        DropdownMenuItem(value: 'species', child: Text('Species')),
-                      ],
-                    ),
-                  ),
-                  IconButton(
-                    icon: Icon(ascending ? Icons.arrow_upward : Icons.arrow_downward),
-                    onPressed: () {
-                      ascending = !ascending;
+                    onChanged: (value) {
+                      searchQuery = value;
                       applyFilters();
                     },
                   ),
-                  TextButton(
-                    onPressed: clearFilters,
-                    child: const Text('Clear Filters'),
+                  const SizedBox(height: 12),
+                  const Text(
+                    'Filter by',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 4),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: DropdownButton<String>(
+                          isExpanded: true,
+                          value: selectedPersonality,
+                          onChanged: (value) {
+                            if (value != null) {
+                              selectedPersonality = value;
+                              applyFilters();
+                            }
+                          },
+                          items: personalities.map((p) {
+                            return DropdownMenuItem(value: p, child: Text(p));
+                          }).toList(),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: DropdownButton<String>(
+                          isExpanded: true,
+                          value: selectedSpecies,
+                          onChanged: (value) {
+                            if (value != null) {
+                              selectedSpecies = value;
+                              applyFilters();
+                            }
+                          },
+                          items: speciesList.map((s) {
+                            return DropdownMenuItem(value: s, child: Text(s));
+                          }).toList(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  const Text(
+                    'Sort by',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 4),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: DropdownButton<String>(
+                          isExpanded: true,
+                          value: sortField,
+                          onChanged: (value) {
+                            if (value != null) {
+                              sortField = value;
+                              applyFilters();
+                            }
+                          },
+                          items: const [
+                            DropdownMenuItem(value: 'name', child: Text('Name')),
+                            DropdownMenuItem(value: 'personality', child: Text('Personality')),
+                            DropdownMenuItem(value: 'species', child: Text('Species')),
+                          ],
+                        ),
+                      ),
+                      IconButton(
+                        icon: Icon(ascending ? Icons.arrow_upward : Icons.arrow_downward),
+                        onPressed: () {
+                          ascending = !ascending;
+                          applyFilters();
+                        },
+                      ),
+                      TextButton(
+                        onPressed: clearFilters,
+                        child: const Text('Clear Filters'),
+                      ),
+                    ],
                   ),
                 ],
               ),
-            ],
+            ),
           ),
         ),
         const Divider(),

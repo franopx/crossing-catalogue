@@ -14,10 +14,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DatabaseHelper().initializeDatabase();
 
-  var villagers = ServiceVillager('e');
-  villagers.getVillager('game=NH&nhdetails=true');
-  
-
   runApp(const MainApp());
 }
 
@@ -27,9 +23,6 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return MaterialApp(
-      home: NavPage(title: 'Crossing Catalogue'));
-
     final brightness = View.of(context).platformDispatcher.platformBrightness;
 
     TextTheme textTheme = createTextTheme(context, "Itim", "Itim");
@@ -37,10 +30,6 @@ class MainApp extends StatelessWidget {
 
     return MaterialApp(
       theme: brightness == Brightness.light ? theme.light() : theme.dark(),
-      home: QuizPage(
-        title: 'test de personalidad',
-        questions: personalityQuestions,
-      ),
-    );
+      home: NavPage(title: 'Crossing Catalogue'));
   }
 }

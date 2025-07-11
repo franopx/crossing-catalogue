@@ -14,10 +14,13 @@ import 'dart:math';
 class CollectionPage extends StatefulWidget{
   CollectionPage({
     super.key, 
-    required this.title});
+    required this.title,
+    required this.isOnline});
 
   final String title;
   var logger = Logger();
+  
+  var isOnline;
 
   @override
   State<StatefulWidget> createState() {
@@ -33,10 +36,12 @@ class CollectionPageState extends State<CollectionPage> {
 
   final DatabaseHelper db = DatabaseHelper();
 
+  var isOnline;
+
 @override
   void initState() {
     super.initState();
-
+    isOnline = widget.isOnline;
     getItemList();
   }
 

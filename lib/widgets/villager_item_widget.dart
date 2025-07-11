@@ -15,6 +15,7 @@ class VillagerItemWidget extends StatelessWidget {
         leading: ClipRRect(
           borderRadius: BorderRadius.circular(8),
           child: CachedNetworkImage(
+            alignment: Alignment.topCenter,
             imageUrl: villager.imageUrl,
             width: 50,
             height: 50,

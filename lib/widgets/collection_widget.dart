@@ -1,5 +1,6 @@
 import 'package:crossing_catalogue/domain/entities/item_data_entity.dart';
 import 'package:crossing_catalogue/services/database_helper.dart';
+import 'package:crossing_catalogue/services/network_check.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -23,6 +24,16 @@ class _CollectionListWidgetState extends State<CollectionListWidget> {
   void initState() {
     super.initState();
     fetchItems();
+    checkInternet();
+  }
+
+  bool isOnline = false;
+  
+  Future<void> checkInternet() async {
+    bool connection = await NetworkStatus.isOnline;
+    setState(() {
+      isOnline = connection;
+    });
   }
 
   Future<void> fetchItems() async {
@@ -97,9 +108,14 @@ class _CollectionListWidgetState extends State<CollectionListWidget> {
 
   @override
   Widget build(BuildContext context) {
+    
+
+    
     if (isLoading) {
       return const Center(child: CircularProgressIndicator());
     }
+
+
 
     final types = ['All', ...{for (final item in allItems) item.type}];
 
@@ -167,12 +183,12 @@ class _CollectionListWidgetState extends State<CollectionListWidget> {
                 child: ListTile(
                   leading: ClipRRect(
                     borderRadius: BorderRadius.circular(6),
-                    child: Image.network(
+                    child: isOnline ? Image.network(
                       item.imageUrl,
                       width: 50,
                       height: 50,
                       fit: BoxFit.cover,
-                    ),
+                    ) : Icon(Icons.signal_wifi_off),
                   ),
                   title: Text(item.name),
                   subtitle: Text(item.type),
