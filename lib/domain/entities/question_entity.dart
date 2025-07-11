@@ -3,5 +3,9 @@ class Question {
   List<String> answers;
   List<Map<String, Map<String, int>>> effects;
 
-  Question(this.question, this.answers, this.effects);
+  Question({
+    required this.question,
+    required this.answers,
+    required this.effects,
+  });
 }

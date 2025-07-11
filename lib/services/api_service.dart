@@ -41,7 +41,7 @@ class ServiceVillager {
         .join('&');
   }
 
-  int ScoreVillager(
+  int scoreVillager(
     Map<String, dynamic> villager,
     Map<String, Map<String, int>> votes,
   ) {
@@ -82,7 +82,7 @@ class ServiceVillager {
     final ranked = data
         .map<Map<String, dynamic>>((v) => Map<String, dynamic>.from(v))
         .map((villager) {
-          final score = ScoreVillager(villager, votes);
+          final score = scoreVillager(villager, votes);
           return VillagerMatch(villager: villager, score: score);
         })
         .toList();
