@@ -20,51 +20,51 @@ final List<Question> personalityQuestions = [
     effects: [
       {
         // Enero
-        'birthday_month': {'nov': 1, 'dec': 2, 'jan': 3, 'feb': 2, 'mar': 1},
+        'birthmonth': {'nov': 1, 'dec': 2, 'jan': 3, 'feb': 2, 'mar': 1},
       },
       {
         // Febrero
-        'birthday_month': {'dec': 1, 'jan': 2, 'feb': 3, 'mar': 2, 'apr': 1},
+        'birthmonth': {'dec': 1, 'jan': 2, 'feb': 3, 'mar': 2, 'apr': 1},
       },
       {
         // Marzo
-        'birthday_month': {'jan': 1, 'feb': 2, 'mar': 3, 'apr': 2, 'may': 1},
+        'birthmonth': {'jan': 1, 'feb': 2, 'mar': 3, 'apr': 2, 'may': 1},
       },
       {
         // Abril
-        'birthday_month': {'feb': 1, 'mar': 2, 'apr': 3, 'may': 2, 'jun': 1},
+        'birthmonth': {'feb': 1, 'mar': 2, 'apr': 3, 'may': 2, 'jun': 1},
       },
       {
         // Mayo
-        'birthday_month': {'mar': 1, 'apr': 2, 'may': 3, 'jun': 2, 'jul': 1},
+        'birthmonth': {'mar': 1, 'apr': 2, 'may': 3, 'jun': 2, 'jul': 1},
       },
       {
         // Junio
-        'birthday_month': {'apr': 1, 'may': 2, 'jun': 3, 'jul': 2, 'aug': 1},
+        'birthmonth': {'apr': 1, 'may': 2, 'jun': 3, 'jul': 2, 'aug': 1},
       },
       {
         // Julio
-        'birthday_month': {'may': 1, 'jun': 2, 'jul': 3, 'aug': 2, 'sep': 1},
+        'birthmonth': {'may': 1, 'jun': 2, 'jul': 3, 'aug': 2, 'sep': 1},
       },
       {
         // Agosto
-        'birthday_month': {'jun': 1, 'jul': 2, 'aug': 3, 'sep': 2, 'oct': 1},
+        'birthmonth': {'jun': 1, 'jul': 2, 'aug': 3, 'sep': 2, 'oct': 1},
       },
       {
         // Septiembre
-        'birthday_month': {'jul': 1, 'aug': 2, 'sep': 3, 'oct': 2, 'nov': 1},
+        'birthmonth': {'jul': 1, 'aug': 2, 'sep': 3, 'oct': 2, 'nov': 1},
       },
       {
         // Octubre
-        'birthday_month': {'aug': 1, 'sep': 2, 'oct': 3, 'nov': 2, 'dec': 1},
+        'birthmonth': {'aug': 1, 'sep': 2, 'oct': 3, 'nov': 2, 'dec': 1},
       },
       {
         // Noviembre
-        'birthday_month': {'sep': 1, 'oct': 2, 'nov': 3, 'dec': 2, 'jan': 1},
+        'birthmonth': {'sep': 1, 'oct': 2, 'nov': 3, 'dec': 2, 'jan': 1},
       },
       {
         // Diciembre
-        'birthday_month': {'oct': 1, 'nov': 2, 'dec': 3, 'jan': 2, 'feb': 1},
+        'birthmonth': {'oct': 1, 'nov': 2, 'dec': 3, 'jan': 2, 'feb': 1},
       },
     ],
   ),

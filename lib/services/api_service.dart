@@ -70,7 +70,8 @@ class ServiceVillager {
   }) async {
     final filters = buildApiFilters(votes);
     final searchQuery = buildSearchQuery(filters);
-    final url = Uri.parse('$villagerUrl?=$apiKey&$searchQuery');
+    print(searchQuery);
+    final url = Uri.parse('$villagerUrl?api_key=$apiKey&$searchQuery');
 
     final response = await http.get(url);
 
