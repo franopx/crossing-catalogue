@@ -1,3 +1,5 @@
+
+
 import 'package:crossing_catalogue/domain/entities/item_data_entity.dart';
 import 'package:crossing_catalogue/services/database_helper.dart';
 import 'package:crossing_catalogue/services/network_check.dart';
@@ -5,7 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CollectionListWidget extends StatefulWidget {
-  const CollectionListWidget({super.key});
+  final void Function(Future<void> Function())? onFetchCallbackReady;
+
+
+  const CollectionListWidget({super.key, required this.onFetchCallbackReady});
 
   @override
   State<CollectionListWidget> createState() => _CollectionListWidgetState();
@@ -23,6 +28,8 @@ class _CollectionListWidgetState extends State<CollectionListWidget> {
   @override
   void initState() {
     super.initState();
+
+    widget.onFetchCallbackReady?.call(fetchItems);
     fetchItems();
     checkInternet();
   }

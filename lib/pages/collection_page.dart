@@ -12,10 +12,15 @@ import 'package:logger/web.dart';
 import 'dart:math';
 
 class CollectionPage extends StatefulWidget{
+  
+  final void Function(Future<void> Function()) onReloadRegister;
+  
   CollectionPage({
     super.key, 
     required this.title,
-    required this.isOnline});
+    required this.isOnline,
+    required this.onReloadRegister
+    });
 
   final String title;
   var logger = Logger();
@@ -55,6 +60,11 @@ class CollectionPageState extends State<CollectionPage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      body: CollectionListWidget(),);
+      body: CollectionListWidget(
+        onFetchCallbackReady: (fetchItemsFn) {
+          widget.onReloadRegister(fetchItemsFn); // ⬅️ Pasa hacia NavPage
+        },
+      ),
+    );
   }
 }

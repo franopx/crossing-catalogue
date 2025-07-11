@@ -1,6 +1,7 @@
 
 import 'package:crossing_catalogue/pages/collection_page.dart';
 import 'package:crossing_catalogue/pages/home_page.dart';
+import 'package:crossing_catalogue/pages/preferences_page.dart';
 import 'package:crossing_catalogue/pages/quiz_page.dart';
 import 'package:crossing_catalogue/pages/villager_catalogue_page.dart';
 import 'package:crossing_catalogue/services/network_check.dart';
@@ -28,6 +29,7 @@ class NavPageState extends State<NavPage> {
   String currentTitle = 'Crossing Catalogue';
   int currentPage = 0;
 
+  Future<void> Function()? reloadCollection;
   bool isOnline = false;
 
   Future<void> onlineCheck() async {
@@ -65,7 +67,7 @@ class NavPageState extends State<NavPage> {
         setState(() {
           currentTitle = 'Collection';
         });
-        return CollectionPage(title: 'Collection', isOnline: isOnline);
+        return _buildCollection();
       default: 
         setState(() {
           currentTitle = 'Crossing Catalogue';
@@ -74,12 +76,37 @@ class NavPageState extends State<NavPage> {
     }
   }
 
+  Widget _buildCollection() {
+    return CollectionPage(
+      title: 'Collection',
+      isOnline: isOnline,
+      onReloadRegister: (callback) {
+        reloadCollection = callback; // guarda el fetchItems()
+      },
+    );
+  }
+
 @override
 Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
       title: Text(currentTitle),
       backgroundColor: Colors.blue,
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.settings),
+          onPressed: () async {
+            await Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const PreferencesPage(),
+              ),
+            );
+
+            await reloadCollection?.call();
+          },
+        ),
+      ],
     ),
     body: Stack(
       children: [
