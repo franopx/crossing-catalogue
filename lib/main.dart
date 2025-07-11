@@ -1,3 +1,5 @@
+import 'package:crossing_catalogue/domain/quiz_data/island_quiz.dart';
+import 'package:crossing_catalogue/domain/quiz_data/personality_quiz.dart';
 import 'package:crossing_catalogue/pages/home_page.dart';
 import 'package:crossing_catalogue/pages/nav_page.dart';
 import 'package:crossing_catalogue/pages/quiz_page.dart';
@@ -26,7 +28,10 @@ class MainApp extends StatelessWidget {
 
     return MaterialApp(
       theme: brightness == Brightness.light ? theme.light() : theme.dark(),
-      home: QuizPage(),
+      home: QuizPage(
+        title: 'test de personalidad',
+        questions: personalityQuestions,
+      ),
     );
   }
 }

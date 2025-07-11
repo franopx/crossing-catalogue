@@ -70,8 +70,8 @@ final List<Question> personalityQuestions = [
   ),
   Question(
     question: '¿Qué palabra te describe mejor?',
-    answers: [],
-    effects: [],
+    answers: ['a', 'b', 'c'],
+    effects: [{}, {}, {}],
   ),
   Question(
     question: '¿Qué intereses tienes?',
@@ -84,10 +84,33 @@ final List<Question> personalityQuestions = [
       'Salir de compras',
       'Tocar instrumentos',
     ],
-    effects: [],
+    effects: [
+      {
+        // Dibujar
+      },
+      {
+        // Estudiar
+      },
+      {
+        // Hacer ejercicio
+      },
+      {
+        // Jugar videojuegos
+      },
+      {
+        // Leer libros
+      },
+      {
+        // Salir de compras
+      },
+      {
+        // Tocar instrumentos
+      },
+    ],
+    type: QuestionType.multipleChoice,
   ),
   Question(
-    question: '¿Cuál es tu asignatura favorita?',
+    question: '¿Cuáles son tus asignaturas favoritas?',
     answers: [
       'Artes',
       'Ciencias',
@@ -97,17 +120,92 @@ final List<Question> personalityQuestions = [
       'Matemática',
       'Música',
     ],
-    effects: [],
+    effects: [
+      {
+        // Artes
+        'personality': {'lazy': 2, 'smug': 3, 'peppy': 2},
+        'hobby': {'fashion': 3},
+        'fav_styles': {'elegant': 2, 'gorgeous': 2},
+      },
+      {
+        // Ciencias
+        'personality': {'normal': 2, 'cranky': 1, 'smug': 2},
+        'fav_styles': {'simple': 1},
+        'hobby': {'education': 2, 'nature': 3},
+      },
+      {
+        // Educación Física
+        'personality': {'jock': 3, 'big sister': 3},
+        'fav_styles': {'active': 3, 'cool': 1},
+        'hobby': {'fitness': 3},
+      },
+      {
+        // Historia
+      },
+      {
+        // Lenguaje
+      },
+      {
+        // Matemática
+      },
+      {
+        // Música
+        'personality': {'lazy': 2},
+        'hobby': {'music': 3, 'play': 1},
+      },
+    ],
+    type: QuestionType.multipleChoice,
   ),
   Question(
     question: '¿Genero de pelicula favorita?',
     answers: ['Acción', 'Comedia', 'Fantasia', 'Romance', 'Suspenso', 'Terror'],
-    effects: [],
+    effects: [
+      {
+        // Accion
+      },
+      {
+        // Comedia
+      },
+      {
+        // Fantasia
+      },
+      {
+        // Romance
+      },
+      {
+        // Suspenso
+      },
+      {
+        // Terror
+      },
+    ],
   ),
   Question(
     question: '¿Genero musical favorito?',
     answers: ['Clásica', 'Jazz', 'Pop', 'Rap', 'Rock', 'Tecno', 'Trap'],
-    effects: [],
+    effects: [
+      {
+        // Clasica
+      },
+      {
+        // Jazz
+      },
+      {
+        // Pop
+      },
+      {
+        // Rap
+      },
+      {
+        // Rock
+      },
+      {
+        // Tecno
+      },
+      {
+        // Trap
+      },
+    ],
   ),
   Question(
     question: '¿Colores favoritos?',
@@ -126,12 +224,135 @@ final List<Question> personalityQuestions = [
       'Rosa',
       'Verde',
     ],
-    effects: [],
+    effects: [
+      {
+        // Amarillo
+        'fav_colors': {'yellow': 2, 'colorful': 1},
+      },
+      {
+        // Azul
+        'fav_colors': {'blue': 2, 'colorful': 1},
+      },
+      {
+        // Beige
+        'fav_colors': {'beige': 2},
+      },
+      {
+        // Blanco
+        'fav_colors': {'white': 2},
+      },
+      {
+        // Cafe
+        'fav_colors': {'brown': 2},
+      },
+      {
+        // Celeste
+        'fav_colors': {'aqua': 2, 'colorful': 1},
+      },
+      {
+        // Gris
+        'fav_colors': {'gray': 2},
+      },
+      {
+        // Morado
+        'fav_colors': {'purple': 2, 'colorful': 1},
+      },
+      {
+        // Naranja
+        'fav_colors': {'orange': 2, 'colorful': 1},
+      },
+      {
+        // Negro
+        'fav_colors': {'black': 2},
+      },
+      {
+        // Rojo
+        'fav_colors': {'red': 2, 'colorful': 1},
+      },
+      {
+        // Rosa
+        'fav_colors': {'pink': 2, 'colorful': 1},
+      },
+      {
+        // Verde
+        'fav_colors': {'green': 2, 'colorful': 1},
+      },
+    ],
+    type: QuestionType.multipleChoice,
   ),
   Question(
     question: '¿Cuál es tu sabor favorito?',
     answers: ['Ácido', 'Agrio', 'Amargo', 'Dulce', 'Picante', 'Salado'],
-    effects: [],
+    effects: [
+      {
+        // Acido
+      },
+      {
+        // Agrio
+      },
+      {
+        // Amargo
+      },
+      {
+        // Dulce
+      },
+      {
+        // Picante
+      },
+      {
+        // Salado
+      },
+    ],
   ),
-  Question(question: '¿Tienes mascotas?', answers: ['Si', 'No'], effects: []),
+  Question(
+    question: '¿Tienes mascotas?',
+    answers: ['Si', 'No'],
+    effects: [
+      {
+        // Si
+        'species': {
+          'bird': 2,
+          'cat': 2,
+          'dog': 2,
+          'duck': 2,
+          'frog': 2,
+          'hamster': 2,
+          'mouse': 2,
+          'rabbit': 2,
+          'squirrel': 2,
+        },
+      },
+      {
+        // No
+        'species': {
+          'alligator': 2,
+          'anteater': 2,
+          'bear': 2,
+          'bear cub': 2,
+          'bull': 2,
+          'chicken': 2,
+          'cow': 2,
+          'deer': 2,
+          'eagle': 2,
+          'elephant': 2,
+          'goat': 2,
+          'gorilla': 2,
+          'hippo': 2,
+          'horse': 2,
+          'koala': 2,
+          'kangaroo': 2,
+          'lion': 2,
+          'monkey': 2,
+          'octopus': 2,
+          'ostrich': 2,
+          'penguin': 2,
+          'pig': 2,
+          'rhino': 2,
+          'sheep': 2,
+          'tiger': 2,
+          'wolf': 2,
+        },
+      },
+    ],
+  ),
 ];

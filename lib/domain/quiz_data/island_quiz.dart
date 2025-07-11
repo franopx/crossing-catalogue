@@ -1,6 +1,6 @@
 import 'package:crossing_catalogue/domain/entities/question_entity.dart';
 
-final List<Question> personalityQuestions = [
+final List<Question> islandQuestions = [
   Question(
     question: '¿Qué estética tiene tu isla?',
     answers: ['Rural', 'Tierna', 'Citadina', 'Medieval', 'Natural', 'Desorden'],
@@ -20,11 +20,13 @@ final List<Question> personalityQuestions = [
       'Islas Misteriosas',
     ],
     effects: [],
+    type: QuestionType.multipleChoice,
   ),
   Question(
     question: '¿En qué época sueles jugar?',
     answers: ['Verano', 'Otoño', 'Invierno', 'Primavera'],
     effects: [],
+    type: QuestionType.multipleChoice,
   ),
   Question(
     question: '¿Cuántas veces juegas a la semana?',
@@ -42,6 +44,7 @@ final List<Question> personalityQuestions = [
       '4:00 AM',
     ],
     effects: [],
+    type: QuestionType.multipleChoice,
   ),
   Question(
     question: '¿Cuántas estrellas tiene tu isla?',
@@ -66,6 +69,7 @@ final List<Question> personalityQuestions = [
       'Cocos',
     ],
     effects: [],
+    type: QuestionType.multipleChoice,
   ),
   Question(
     question: '¿Estás al tanto de las últimas noticias de Animal Crossing?',
