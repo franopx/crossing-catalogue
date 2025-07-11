@@ -1,4 +1,5 @@
 
+import 'package:crossing_catalogue/pages/collection_page.dart';
 import 'package:crossing_catalogue/pages/home_page.dart';
 import 'package:crossing_catalogue/pages/villager_catalogue_page.dart';
 import 'package:crossing_catalogue/widgets/bottom_nav_bar.dart';
@@ -31,6 +32,11 @@ class NavPageState extends State<NavPage> {
           currentTitle = 'Villagers';
         });
         return VillagerCataloguePage(title: 'Catalogue');
+      case 2:
+        setState(() {
+          currentTitle = 'Collection';
+        });
+        return CollectionPage(title: 'Collection');
       default: 
         setState(() {
           currentTitle = 'Crossing Catalogue';
