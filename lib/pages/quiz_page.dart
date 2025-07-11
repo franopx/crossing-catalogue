@@ -18,21 +18,10 @@ class _QuizState extends State<QuizPage> {
   final service = ServiceVillager('');
   Map<String, Map<String, int>> attributeVotes = {};
 
-  void applyEffects(Map<String, Map<String, int>> effects) {
-    for (final attr in effects.entries) {
-      attributeVotes.putIfAbsent(attr.key, () => {});
-      for (final v in attr.value.entries) {
-        attributeVotes[attr.key]!.update(
-          v.key,
-          (val) => val + v.value,
-          ifAbsent: () => v.value,
-        );
-      }
-    }
-  }
-
   void showResults() async {
-    final villagers = await service.fetchAndRankVillager(votes: attributeVotes);
+    final villagers = await service.fetchAndRankVillagers(
+      votes: attributeVotes,
+    );
     if (!mounted) return;
 
     if (villagers.isEmpty) {
@@ -53,10 +42,10 @@ class _QuizState extends State<QuizPage> {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.network(topVillager.villager['image_url']),
+              Image.network(topVillager.villager.imageUrl),
               const SizedBox(height: 8),
               Text(
-                '${topVillager.villager['name']}',
+                topVillager.villager.name,
                 style: const TextStyle(fontSize: 20),
               ),
             ],

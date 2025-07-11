@@ -18,4 +18,19 @@ class Villager {
     this.hobby,
     this.imageUrl,
   );
+
+  factory Villager.fromJson(Map<String, dynamic> json) {
+    final nh = json['nh_details'] ?? {};
+
+    return Villager(
+      json['name'] ?? '',
+      json['species'] ?? '',
+      json['personality'] ?? '',
+      json['birthday_month'] ?? '',
+      List<String>.from(nh['fav_styles']) ?? [],
+      List<String>.from(nh['fav_colors']) ?? [],
+      nh['hobby'],
+      json['image_url'],
+    );
+  }
 }
