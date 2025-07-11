@@ -17,3 +17,7 @@ El proyecto está estructurado de forma modular, separando la lógica, component
 ## Desarrolladores
 - Matías Oyarzún
 - Francisco Galeno
+
+## Preferencias
+- Tema
+- Borrar datos guardados

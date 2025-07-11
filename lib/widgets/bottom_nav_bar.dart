@@ -24,6 +24,10 @@ class BottomNavBar extends StatelessWidget {
           label: 'Home',
         ),
         BottomNavigationBarItem(
+          icon: Icon(Icons.question_mark),
+          label: 'Quiz',
+        ),
+        BottomNavigationBarItem(
           icon: Icon(Icons.pets),
           label: 'Villagers',
         ),
