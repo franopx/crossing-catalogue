@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:crossing_catalogue/domain/entities/item_data_entity.dart';
 import 'package:crossing_catalogue/services/items_api_service.dart';
+import 'package:crossing_catalogue/services/network_check.dart';
 import 'package:flutter/material.dart';
 
 import 'package:path/path.dart';
@@ -43,7 +44,7 @@ class DatabaseHelper {
     final dbPath = await getDatabasesPath();
     final path = join(dbPath, 'item_database.db');
     
-    var db;
+    Database db;
     db = await openDatabase(
       path,
       version: 1,
@@ -220,6 +221,10 @@ class DatabaseHelper {
 
   Future<List<ItemData>> getJson() async {
     
+    if (await NetworkStatus.isOnline == false) {
+      return [];
+    }
+
     var fishJsonRaw = await itemRequest.getItem('thumbsize=48', 'fish');
     fishJson = jsonDecode(fishJsonRaw);
 

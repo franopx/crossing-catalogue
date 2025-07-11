@@ -26,6 +26,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    return MaterialApp(
+      home: NavPage(title: 'Crossing Catalogue'));
+
     final brightness = View.of(context).platformDispatcher.platformBrightness;
 
     TextTheme textTheme = createTextTheme(context, "Itim", "Itim");
