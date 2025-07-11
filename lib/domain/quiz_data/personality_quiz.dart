@@ -70,8 +70,38 @@ final List<Question> personalityQuestions = [
   ),
   Question(
     question: '¿Qué palabra te describe mejor?',
-    answers: ['a', 'b', 'c'],
-    effects: [{}, {}, {}],
+    answers: [
+      'Amabilidad',
+      'Determinacion',
+      'Integridad',
+      'Justicia',
+      'Paciencia',
+      'Perseverancia',
+      'Valentia',
+    ],
+    effects: [
+      {
+        // Amabilidad
+      },
+      {
+        // Determinacion
+      },
+      {
+        // Integridad
+      },
+      {
+        // Justicia
+      },
+      {
+        // Paciencia
+      },
+      {
+        // Perseverancia
+      },
+      {
+        // Valentia
+      },
+    ],
   ),
   Question(
     question: '¿Qué intereses tienes?',
