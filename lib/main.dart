@@ -1,5 +1,8 @@
+import 'package:crossing_catalogue/domain/quiz_data/island_quiz.dart';
+import 'package:crossing_catalogue/domain/quiz_data/personality_quiz.dart';
 import 'package:crossing_catalogue/pages/home_page.dart';
 import 'package:crossing_catalogue/pages/nav_page.dart';
+import 'package:crossing_catalogue/pages/quiz_page.dart';
 import 'package:crossing_catalogue/pages/villager_catalogue_page.dart';
 import 'package:crossing_catalogue/services/api_service.dart';
 import 'package:crossing_catalogue/services/database_helper.dart';
@@ -30,8 +33,10 @@ class MainApp extends StatelessWidget {
 
     return MaterialApp(
       theme: brightness == Brightness.light ? theme.light() : theme.dark(),
-      home: NavPage(title: 'Crossing Catalogue'),
-
+      home: QuizPage(
+        title: 'test de personalidad',
+        questions: personalityQuestions,
+      ),
     );
   }
 }

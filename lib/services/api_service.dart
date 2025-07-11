@@ -41,7 +41,7 @@ class ServiceVillager {
         .join('&');
   }
 
-  int ScoreVillager(
+  int scoreVillager(
     Map<String, dynamic> villager,
     Map<String, Map<String, int>> votes,
   ) {
@@ -70,7 +70,8 @@ class ServiceVillager {
   }) async {
     final filters = buildApiFilters(votes);
     final searchQuery = buildSearchQuery(filters);
-    final url = Uri.parse('$villagerUrl?=$apiKey&$searchQuery');
+    print(searchQuery);
+    final url = Uri.parse('$villagerUrl?api_key=$apiKey&$searchQuery');
 
     final response = await http.get(url);
 
@@ -82,7 +83,7 @@ class ServiceVillager {
     final ranked = data
         .map<Map<String, dynamic>>((v) => Map<String, dynamic>.from(v))
         .map((villager) {
-          final score = ScoreVillager(villager, votes);
+          final score = scoreVillager(villager, votes);
           return VillagerMatch(villager: villager, score: score);
         })
         .toList();

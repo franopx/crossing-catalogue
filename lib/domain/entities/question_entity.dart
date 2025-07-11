@@ -1,7 +1,15 @@
-class Question {
-  String question;
-  List<String> answers;
-  List<Map<String, Map<String, int>>> effects;
+enum QuestionType { singleChoice, multipleChoice }
 
-  Question(this.question, this.answers, this.effects);
+class Question {
+  final String question;
+  final List<String> answers;
+  final List<Map<String, Map<String, int>>> effects;
+  final QuestionType type;
+
+  Question({
+    required this.question,
+    required this.answers,
+    required this.effects,
+    this.type = QuestionType.singleChoice,
+  });
 }
