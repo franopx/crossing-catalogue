@@ -1,4 +1,5 @@
 import 'package:crossing_catalogue/domain/entities/question_entity.dart';
+import 'package:crossing_catalogue/pages/share_result_page.dart';
 import 'package:crossing_catalogue/services/api_service.dart';
 import 'package:flutter/material.dart';
 import 'package:crossing_catalogue/widgets/question_widget.dart';
@@ -47,6 +48,16 @@ class _QuizState extends State<QuizPage> {
               Text(
                 topVillager.villager.name,
                 style: const TextStyle(fontSize: 20),
+              ),
+              ElevatedButton.icon(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => ShareResult(villager: topVillager.villager),
+                  ),
+                ),
+                icon: const Icon(Icons.share),
+                label: const Text('Ir a Compartir'),
               ),
             ],
           ),

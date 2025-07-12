@@ -7,21 +7,39 @@ final List<Question> islandQuestions = [
     effects: [
       {
         // Rural
+        'species': {},
+        'personality': {'jock': 1, 'big sister': 1},
+        'hobby': {'fitness': 1, 'education': 1},
       },
       {
         // Tierna
+        'species': {},
+        'personality': {'peppy': 1, 'snooty': 1},
+        'hobby': {'fashion': 1, 'play': 1},
       },
       {
         // Citadina
+        'species': {},
+        'personality': {'lazy': 1, 'snooty': 1},
+        'hobby': {'fashion': 1, 'education': 1},
       },
       {
         // Medieval
+        'species': {},
+        'personality': {'jock': 1, 'cranky': 1},
+        'hobby': {'education': 1, 'music': 1},
       },
       {
         // Natural
+        'species': {},
+        'personality': {'normal': 1, 'peppy': 1},
+        'hobby': {'nature': 1, 'play': 1},
       },
       {
         // Desorden
+        'species': {},
+        'personality': {'lazy': 1, 'cranky': 1},
+        'hobby': {'music': 1, 'fitness': 1},
       },
     ],
   ),
@@ -73,15 +91,19 @@ final List<Question> islandQuestions = [
     effects: [
       {
         // Verano
+        'birthmonth': {'jan': 3, 'feb': 3, 'mar': 3},
       },
       {
         // Otoño
+        'birthmonth': {'apr': 3, 'may': 3, 'jun': 3},
       },
       {
         // Invierno
+        'birthmonth': {'jul': 3, 'aug': 3, 'sep': 3},
       },
       {
         // Primavera
+        'birthmonth': {'oct': 3, 'nov': 3, 'dec': 3},
       },
     ],
     type: QuestionType.multipleChoice,
@@ -92,15 +114,19 @@ final List<Question> islandQuestions = [
     effects: [
       {
         // 1 dia
+        'hobby': {'education': 1},
       },
       {
         // 3 dias
+        'hobby': {'music': 1},
       },
       {
         // 5 dias
+        'hobby': {'fitness': 1},
       },
       {
         // Todos los días
+        'hobby': {'play': 1},
       },
     ],
   ),
@@ -117,21 +143,71 @@ final List<Question> islandQuestions = [
     effects: [
       {
         // 8:00 AM
+        'personality': {
+          'lazy': 1,
+          'jock': 1,
+          'cranky': 1,
+          'smug': 1,
+          'normal': 1,
+          'peppy': 1,
+          'snooty': 1,
+          'big sister': 1,
+        },
       },
       {
         // 12:00 PM
+        'personality': {
+          'lazy': 1,
+          'jock': 1,
+          'cranky': 1,
+          'smug': 1,
+          'normal': 1,
+          'peppy': 1,
+          'snooty': 1,
+          'big sister': 1,
+        },
       },
       {
         // 4:00 PM
+        'personality': {
+          'lazy': 1,
+          'jock': 1,
+          'cranky': 1,
+          'smug': 1,
+          'normal': 1,
+          'peppy': 1,
+          'snooty': 1,
+          'big sister': 1,
+        },
       },
       {
         // 8:00 PM
+        'personality': {
+          'lazy': 1,
+          'jock': 1,
+          'cranky': 1,
+          'smug': 1,
+          'normal': 1,
+          'peppy': 1,
+          'snooty': 1,
+          'big sister': 1,
+        },
       },
       {
         // 12:00 AM
+        'personality': {
+          'jock': 1,
+          'cranky': 1,
+          'smug': 1,
+          'normal': 1,
+          'peppy': 1,
+          'snooty': 1,
+          'big sister': 1,
+        },
       },
       {
         // 4:00 AM
+        'personality': {'jock': 1, 'cranky': 1, 'smug': 1, 'peppy': 1},
       },
     ],
     type: QuestionType.multipleChoice,
@@ -180,21 +256,27 @@ final List<Question> islandQuestions = [
     effects: [
       {
         // Manzanas
+        'fav_colors': {'red': 1, 'yellow': 1, 'brown': 1},
       },
       {
         // Cerezas
+        'fav_colors': {'red': 2, 'green': 1},
       },
       {
         // Naranjas
+        'fav_colors': {'orange': 2, 'green': 1},
       },
       {
         // Melocotones
+        'fav_colors': {'pink': 2, 'white': 1},
       },
       {
         // Peras
+        'fav_colors': {'green': 1, 'yellow': 1, 'brown': 1},
       },
       {
         // Cocos
+        'fav_colors': {'green': 3},
       },
     ],
     type: QuestionType.multipleChoice,
