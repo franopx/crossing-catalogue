@@ -34,7 +34,7 @@ class _ShareResultState extends State<ShareResult> {
     await SharePlus.instance.share(
       ShareParams(
         files: [XFile(imagePath.path)],
-        text: '¡Este es mi aldeano ideal en Animal Crossing: New Horizons!',
+        text: '¡This is my ideal villager in Animal Crossing: New Horizons!',
       ),
     );
   }

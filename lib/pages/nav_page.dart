@@ -1,21 +1,17 @@
-
 import 'package:crossing_catalogue/pages/collection_page.dart';
 import 'package:crossing_catalogue/pages/home_page.dart';
 import 'package:crossing_catalogue/pages/preferences_page.dart';
-import 'package:crossing_catalogue/pages/quiz_page.dart';
+import 'package:crossing_catalogue/pages/quiz_selection_page.dart';
 import 'package:crossing_catalogue/pages/villager_catalogue_page.dart';
 import 'package:crossing_catalogue/services/network_check.dart';
 import 'package:crossing_catalogue/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/web.dart';
-import 'package:crossing_catalogue/domain/quiz_data/island_quiz.dart';
-import 'package:crossing_catalogue/domain/quiz_data/personality_quiz.dart';
 
-class NavPage extends StatefulWidget{
+class NavPage extends StatefulWidget {
   const NavPage({super.key, required this.title});
 
   final String title;
-
 
   @override
   State<StatefulWidget> createState() {
@@ -24,7 +20,6 @@ class NavPage extends StatefulWidget{
 }
 
 class NavPageState extends State<NavPage> {
-  
   var logger = Logger();
   String currentTitle = 'Crossing Catalogue';
   int currentPage = 0;
@@ -33,12 +28,11 @@ class NavPageState extends State<NavPage> {
   bool isOnline = false;
 
   Future<void> onlineCheck() async {
-      bool check = await NetworkStatus.isOnline;
-    
+    bool check = await NetworkStatus.isOnline;
+
     setState(() {
       isOnline = check;
     });
-    
   }
 
   @override
@@ -48,37 +42,36 @@ class NavPageState extends State<NavPage> {
   }
 
   Widget buildContent() {
-    switch(currentPage) {
+    switch (currentPage) {
       case 1:
-        return isOnline ? 
-          QuizPage(
-            title: 'Personality Test',
-            questions: personalityQuestions,) : 
-          Center(child: const Text('No internet, try again later.'));
+        return isOnline
+            ? QuizSelectionPage()
+            : Center(child: const Text('No internet, try again later.'));
 
-      case 2: 
-        return isOnline ? 
-          VillagerCataloguePage(title: 'Catalogue', isOnline: isOnline,) : 
-          Center(child: const Text('No internet, try again later.'));
+      case 2:
+        return isOnline
+            ? VillagerCataloguePage(title: 'Catalogue', isOnline: isOnline)
+            : Center(child: const Text('No internet, try again later.'));
       case 3:
         return _buildCollection();
-      default: 
+      default:
         return HomePage(
           onViewVillagers: () {
-              setState(() {
-                currentPage = 2;
-              });
-            }, 
+            setState(() {
+              currentPage = 2;
+            });
+          },
           onTakeTest: () {
-              setState(() {
-                currentPage = 1;
-              });
-            }, 
+            setState(() {
+              currentPage = 1;
+            });
+          },
           onViewCollection: () {
-              setState(() {
-                currentPage = 3;
-              });
-            },);
+            setState(() {
+              currentPage = 3;
+            });
+          },
+        );
     }
   }
 
@@ -92,73 +85,74 @@ class NavPageState extends State<NavPage> {
     );
   }
 
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(
-      title: Text(currentTitle),
-      backgroundColor: Colors.blue,
-      actions: [
-        IconButton(
-          icon: const Icon(Icons.settings),
-          onPressed: () async {
-            await Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const PreferencesPage(),
-              ),
-            );
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(currentTitle),
+        backgroundColor: Colors.blue,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () async {
+              await Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const PreferencesPage(),
+                ),
+              );
 
-            await reloadCollection?.call();
-          },
-        ),
-      ],
-    ),
-    body: Stack(
-      children: [
-        // Tu contenido principal
-        Positioned.fill(
-          child: buildContent(), // Asegúrate que NO sea otro Scaffold
-        ),
+              await reloadCollection?.call();
+            },
+          ),
+        ],
+      ),
+      body: Stack(
+        children: [
+          // Tu contenido principal
+          Positioned.fill(
+            child: buildContent(), // Asegúrate que NO sea otro Scaffold
+          ),
 
-        // Barra de "NO INTERNET" en la parte inferior
-        if (!isOnline)
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: Container(
-              color: Colors.blueGrey,
-              padding: EdgeInsets.all(8),
-              child: Text(
-                'Offline Mode',
-                style: TextStyle(color: Colors.white),
-                textAlign: TextAlign.center,
+          // Barra de "NO INTERNET" en la parte inferior
+          if (!isOnline)
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: Container(
+                color: Colors.blueGrey,
+                padding: EdgeInsets.all(8),
+                child: Text(
+                  'Offline Mode',
+                  style: TextStyle(color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
-          ),
-      ],
-    ),
-    bottomNavigationBar: BottomNavBar(
-      currentIndex: currentPage,
-      onTabSelected: onNavTap,
-    ),
-  );
-}
+        ],
+      ),
+      bottomNavigationBar: BottomNavBar(
+        currentIndex: currentPage,
+        onTabSelected: onNavTap,
+      ),
+    );
+  }
 
   void onNavTap(value) {
     onlineCheck();
     setState(() {
       currentPage = value;
-      switch(currentPage) {
-        case 0: currentTitle = 'Crossing Catalogue';
-        case 1: currentTitle = 'Villager Test';
-        case 2: currentTitle = 'Villager Catalogue';
-        case 3: currentTitle = 'Collection';
+      switch (currentPage) {
+        case 0:
+          currentTitle = 'Crossing Catalogue';
+        case 1:
+          currentTitle = 'Villager Test';
+        case 2:
+          currentTitle = 'Villager Catalogue';
+        case 3:
+          currentTitle = 'Collection';
       }
     });
   }
-
 }
-
-
