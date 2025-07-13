@@ -2,8 +2,8 @@ import 'package:crossing_catalogue/domain/entities/question_entity.dart';
 
 final List<Question> islandQuestions = [
   Question(
-    question: '¿Qué estética tiene tu isla?',
-    answers: ['Rural', 'Tierna', 'Citadina', 'Medieval', 'Natural', 'Desorden'],
+    question: 'What aesthetic does your island have?',
+    answers: ['Rural', 'Cute', 'Urban', 'Medieval', 'Natural', 'Messy'],
     effects: [
       {
         // Rural
@@ -19,7 +19,7 @@ final List<Question> islandQuestions = [
         'hobby': {'fitness': 1, 'education': 1},
       },
       {
-        // Tierna
+        // Cute
         'species': {
           'squirrel': 1,
           'hamster': 1,
@@ -32,7 +32,7 @@ final List<Question> islandQuestions = [
         'hobby': {'fashion': 1, 'play': 1},
       },
       {
-        // Citadina
+        // Urban
         'species': {
           'cat': 1,
           'dog': 1,
@@ -71,7 +71,7 @@ final List<Question> islandQuestions = [
         'hobby': {'nature': 1, 'play': 1},
       },
       {
-        // Desorden
+        // Messy
         'species': {
           'gorilla': 1,
           'anteater': 1,
@@ -85,29 +85,29 @@ final List<Question> islandQuestions = [
     ],
   ),
   Question(
-    question: '¿Qué tipo de aldeanos te gustan?',
-    answers: ['Bonitos', 'Chistosos', 'Raros', 'Geniales'],
+    question: 'What kind of villagers do you like?',
+    answers: ['Cute', 'Funny', 'Weird', 'Cool'],
     effects: [
       {
-        // Bonitos
+        // Cute
         'personality': {'smug': 1, 'snooty': 1},
         'fav_styles': {'cute': 1, 'elegant': 1, 'gorgeous': 1},
         'hobby': {'fashion': 1, 'education': 1, 'nature': 1},
       },
       {
-        // Chistosos
+        // Funny
         'personality': {'lazy': 1, 'normal': 1},
         'fav_styles': {'simple': 1, 'active': 1, 'cute': 1},
         'hobby': {'play': 1, 'music': 1, 'fashion': 1},
       },
       {
-        // Raros
+        // Weird
         'personality': {'cranky': 1, 'big sister': 1},
-        'fav_styles': {'elegnat': 1, 'cool': 1, 'gorgeous': 1},
+        'fav_styles': {'elegant': 1, 'cool': 1, 'gorgeous': 1},
         'hobby': {'play': 1, 'nature': 1, 'fitness': 1},
       },
       {
-        // Geniales
+        // Cool
         'personality': {'jock': 1, 'peppy': 1},
         'fav_styles': {'cool': 1, 'active': 1, 'simple': 1},
         'hobby': {'education': 1, 'music': 1, 'fitness': 1},
@@ -115,80 +115,80 @@ final List<Question> islandQuestions = [
     ],
   ),
   Question(
-    question: '¿Qué sueles hacer al jugar?',
+    question: 'What do you usually do while playing?',
     answers: [
-      'Tareas Diarias',
-      'Hablar con Aldeanos',
-      'Visitar Amigos',
-      'Islas Misteriosas',
+      'Daily Tasks',
+      'Talk to Villagers',
+      'Visit Friends',
+      'Mystery Islands',
     ],
     effects: [
       {
-        // Tareas Diarias
+        // Daily Tasks
         'personality': {'smug': 1, 'snooty': 1},
       },
       {
-        // Hablar con Aldeanos
+        // Talk to Villagers
         'personality': {'lazy': 1, 'normal': 1},
       },
       {
-        // Visitar Amigos
+        // Visit Friends
         'personality': {'cranky': 1, 'big sister': 1},
       },
       {
-        // Islas Misteriosas
+        // Mystery Islands
         'personality': {'jock': 1, 'peppy': 1},
       },
     ],
     type: QuestionType.multipleChoice,
   ),
   Question(
-    question: '¿En qué época sueles jugar?',
-    answers: ['Verano', 'Otoño', 'Invierno', 'Primavera'],
+    question: 'During which season do you usually play?',
+    answers: ['Summer', 'Autumn', 'Winter', 'Spring'],
     effects: [
       {
-        // Verano
+        // Summer
         'birthmonth': {'jan': 3, 'feb': 3, 'mar': 3},
       },
       {
-        // Otoño
+        // Autumn
         'birthmonth': {'apr': 3, 'may': 3, 'jun': 3},
       },
       {
-        // Invierno
+        // Winter
         'birthmonth': {'jul': 3, 'aug': 3, 'sep': 3},
       },
       {
-        // Primavera
+        // Spring
         'birthmonth': {'oct': 3, 'nov': 3, 'dec': 3},
       },
     ],
     type: QuestionType.multipleChoice,
   ),
   Question(
-    question: '¿Cuántas veces juegas a la semana?',
-    answers: ['1 dia', '3 dias', '5 dias', 'Todos los días'],
+    question: 'How many times do you play per week?',
+    answers: ['1 day', '3 days', '5 days', 'Every day'],
     effects: [
       {
-        // 1 dia
+        // 1 day
         'hobby': {'education': 1},
       },
       {
-        // 3 dias
+        // 3 days
         'hobby': {'music': 1},
       },
       {
-        // 5 dias
+        // 5 days
         'hobby': {'fitness': 1},
       },
       {
-        // Todos los días
+        // Every day
         'hobby': {'play': 1},
       },
     ],
   ),
   Question(
-    question: '¿En qué horas sueles jugar?',
+    question: 'At what times do you usually play?',
     answers: [
       '8:00 AM',
       '12:00 PM',
@@ -270,86 +270,86 @@ final List<Question> islandQuestions = [
     type: QuestionType.multipleChoice,
   ),
   Question(
-    question: '¿Cuántas estrellas tiene tu isla?',
+    question: 'How many stars does your island have?',
     answers: [
-      'No las he desbloqueado',
-      '1 estrella',
-      '2 estrellas',
-      '3 estrellas',
-      '4 estrellas',
-      '5 estrellas',
+      'I have not unlocked them',
+      '1 star',
+      '2 stars',
+      '3 stars',
+      '4 stars',
+      '5 stars',
     ],
     effects: [
       {
-        // No las he desbloqueado
+        // I have not unlocked them
         'fav_styles': {'simple': 1},
       },
       {
-        // 1 estrella
+        // 1 star
         'fav_styles': {'cool': 1},
       },
       {
-        // 2 estrellas
+        // 2 stars
         'fav_styles': {'active': 1},
       },
       {
-        // 3 estrellas
+        // 3 stars
         'fav_styles': {'cute': 1},
       },
       {
-        // 4 estrellas
+        // 4 stars
         'fav_styles': {'gorgeous': 1},
       },
       {
-        // 5 estrellas
+        // 5 stars
         'fav_styles': {'elegant': 1},
       },
     ],
   ),
   Question(
-    question: '¿Qué frutas tiene tu isla?',
+    question: 'What fruits does your island have?',
     answers: [
-      'Manzanas',
-      'Cerezas',
-      'Naranjas',
-      'Melocotones',
-      'Peras',
-      'Cocos',
+      'Apples',
+      'Cherries',
+      'Oranges',
+      'Peaches',
+      'Pears',
+      'Coconuts',
     ],
     effects: [
       {
-        // Manzanas
+        // Apples
         'fav_colors': {'red': 1, 'yellow': 1, 'brown': 1},
       },
       {
-        // Cerezas
+        // Cherries
         'fav_colors': {'red': 2, 'green': 1},
       },
       {
-        // Naranjas
+        // Oranges
         'fav_colors': {'orange': 2, 'green': 1},
       },
       {
-        // Melocotones
+        // Peaches
         'fav_colors': {'pink': 2, 'white': 1},
       },
       {
-        // Peras
+        // Pears
         'fav_colors': {'green': 1, 'yellow': 1, 'brown': 1},
       },
       {
-        // Cocos
+        // Coconuts
         'fav_colors': {'green': 3},
       },
     ],
     type: QuestionType.multipleChoice,
   ),
   Question(
-    question: '¿Estás al tanto de las últimas noticias de Animal Crossing?',
-    answers: ['Si', 'No'],
+    question: 'Are you up to date with the latest Animal Crossing news?',
+    answers: ['Yes', 'No'],
     effects: [
       {
-        // Si
+        // Yes
         'species': {
           'alligator': 1,
           'anteater': 1,

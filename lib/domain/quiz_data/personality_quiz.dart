@@ -2,520 +2,520 @@ import 'package:crossing_catalogue/domain/entities/question_entity.dart';
 
 final List<Question> personalityQuestions = [
   Question(
-    question: '¿En qué mes naciste?',
+    question: 'What month were you born in?',
     answers: [
-      'Enero',
-      'Febrero',
-      'Marzo',
-      'Abril',
-      'Mayo',
-      'Junio',
-      'Julio',
-      'Agosto',
-      'Septiembre',
-      'Octubre',
-      'Noviembre',
-      'Diciembre',
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
     ],
     effects: [
       {
-        // Enero
-        'birthmonth': {'nov': 1, 'dec': 2, 'jan': 3, 'feb': 2, 'mar': 1},
+        // January
+        'birthmonth': {'November': 1, 'December': 2, 'January': 3, 'February': 2, 'March': 1},
       },
       {
-        // Febrero
-        'birthmonth': {'dec': 1, 'jan': 2, 'feb': 3, 'mar': 2, 'apr': 1},
+        // February
+        'birthmonth': {'December': 1, 'January': 2, 'February': 3, 'March': 2, 'April': 1},
       },
       {
-        // Marzo
-        'birthmonth': {'jan': 1, 'feb': 2, 'mar': 3, 'apr': 2, 'may': 1},
+        // March
+        'birthmonth': {'January': 1, 'February': 2, 'March': 3, 'April': 2, 'May': 1},
       },
       {
-        // Abril
-        'birthmonth': {'feb': 1, 'mar': 2, 'apr': 3, 'may': 2, 'jun': 1},
+        // April
+        'birthmonth': {'February': 1, 'March': 2, 'April': 3, 'May': 2, 'June': 1},
       },
       {
-        // Mayo
-        'birthmonth': {'mar': 1, 'apr': 2, 'may': 3, 'jun': 2, 'jul': 1},
+        // May
+        'birthmonth': {'March': 1, 'April': 2, 'May': 3, 'June': 2, 'July': 1},
       },
       {
-        // Junio
-        'birthmonth': {'apr': 1, 'may': 2, 'jun': 3, 'jul': 2, 'aug': 1},
+        // June
+        'birthmonth': {'April': 1, 'May': 2, 'June': 3, 'July': 2, 'August': 1},
       },
       {
-        // Julio
-        'birthmonth': {'may': 1, 'jun': 2, 'jul': 3, 'aug': 2, 'sep': 1},
+        // July
+        'birthmonth': {'May': 1, 'June': 2, 'July': 3, 'August': 2, 'September': 1},
       },
       {
-        // Agosto
-        'birthmonth': {'jun': 1, 'jul': 2, 'aug': 3, 'sep': 2, 'oct': 1},
+        // August
+        'birthmonth': {'June': 1, 'July': 2, 'August': 3, 'September': 2, 'October': 1},
       },
       {
-        // Septiembre
-        'birthmonth': {'jul': 1, 'aug': 2, 'sep': 3, 'oct': 2, 'nov': 1},
+        // September
+        'birthmonth': {'July': 1, 'August': 2, 'September': 3, 'October': 2, 'November': 1},
       },
       {
-        // Octubre
-        'birthmonth': {'aug': 1, 'sep': 2, 'oct': 3, 'nov': 2, 'dec': 1},
+        // October
+        'birthmonth': {'August': 1, 'September': 2, 'October': 3, 'November': 2, 'December': 1},
       },
       {
-        // Noviembre
-        'birthmonth': {'sep': 1, 'oct': 2, 'nov': 3, 'dec': 2, 'jan': 1},
+        // November
+        'birthmonth': {'September': 1, 'October': 2, 'November': 3, 'December': 2, 'January': 1},
       },
       {
-        // Diciembre
-        'birthmonth': {'oct': 1, 'nov': 2, 'dec': 3, 'jan': 2, 'feb': 1},
+        // December
+        'birthmonth': {'October': 1, 'November': 2, 'December': 3, 'January': 2, 'February': 1},
       },
     ],
   ),
   Question(
-    question: '¿Qué palabra te describe mejor?',
+    question: 'Which word best describes you?',
     answers: [
-      'Amabilidad',
-      'Determinacion',
-      'Integridad',
-      'Justicia',
-      'Paciencia',
-      'Perseverancia',
-      'Valentia',
+      'Kindness',
+      'Determination',
+      'Integrity',
+      'Justice',
+      'Patience',
+      'Perseverance',
+      'Courage',
     ],
     effects: [
       {
-        // Amabilidad
+        // Kindness
         'species': {
-          'kangaroo': 1,
-          'bear cub': 1,
-          'wolf': 1,
-          'koala': 1,
-          'sheep': 1,
+          'Kangaroo': 1,
+          'Bear cub': 1,
+          'Wolf': 1,
+          'Koala': 1,
+          'Sheep': 1,
         },
-        'fav_colors': {'green': 1},
+        'fav_colors': {'Green': 1},
       },
       {
-        // Determinacion
-        'species': {'alligator': 1, 'cat': 1, 'horse': 1, 'bird': 1, 'bull': 1},
-        'fav_colors': {'red': 1},
+        // Determination
+        'species': {'Alligator': 1, 'Cat': 1, 'Horse': 1, 'Bird': 1, 'Bull': 1},
+        'fav_colors': {'Red': 1},
       },
       {
-        // Integridad
-        'species': {'chicken': 1, 'deer': 1, 'rhino': 1, 'pig': 1, 'rabbit': 1},
-        'fav_colors': {'blue': 1},
+        // Integrity
+        'species': {'Chicken': 1, 'Deer': 1, 'Rhino': 1, 'Pig': 1, 'Rabbit': 1},
+        'fav_colors': {'Blue': 1},
       },
       {
-        // Justicia
-        'species': {'lion': 1, 'dog': 1, 'eagle': 1, 'goat': 1, 'gorilla': 1},
-        'fav_colors': {'yellow': 1},
+        // Justice
+        'species': {'Lion': 1, 'Dog': 1, 'Eagle': 1, 'Goat': 1, 'Gorilla': 1},
+        'fav_colors': {'Yellow': 1},
       },
       {
-        // Paciencia
+        // Patience
         'species': {
-          'anteater': 1,
-          'mouse': 1,
-          'hippo': 1,
-          'elephant': 1,
-          'cow': 1,
+          'Anteater': 1,
+          'Mouse': 1,
+          'Hippo': 1,
+          'Elephant': 1,
+          'Cow': 1,
         },
-        'fav_colors': {'aqua': 1},
+        'fav_colors': {'Aqua': 1},
       },
       {
-        // Perseverancia
+        // Perseverance
         'species': {
-          'penguin': 1,
-          'frog': 1,
-          'bear': 1,
-          'duck': 1,
-          'ostrich': 1,
+          'Penguin': 1,
+          'Frog': 1,
+          'Bear': 1,
+          'Duck': 1,
+          'Ostrich': 1,
         },
-        'fav_colors': {'purple': 1},
+        'fav_colors': {'Purple': 1},
       },
       {
-        // Valentia
+        // Courage
         'species': {
-          'monkey': 1,
-          'hamster': 1,
-          'squirrel': 1,
-          'tiger': 1,
-          'octopus': 1,
+          'Monkey': 1,
+          'Hamster': 1,
+          'Squirrel': 1,
+          'Tiger': 1,
+          'Octopus': 1,
         },
-        'fav_colors': {'orange': 1},
+        'fav_colors': {'Orange': 1},
       },
     ],
   ),
   Question(
-    question: '¿Qué intereses tienes?',
+    question: 'What are your interests?',
     answers: [
-      'Dibujar',
-      'Estudiar',
-      'Hacer ejercicio',
-      'Jugar videojuegos',
-      'Leer libros',
-      'Salir de compras',
-      'Tocar instrumentos',
+      'Drawing',
+      'Studying',
+      'Exercising',
+      'Playing video games',
+      'Reading books',
+      'Shopping',
+      'Playing instruments',
     ],
     effects: [
       {
-        // Dibujar
-        'personality': {'big sister': 1, 'lazy': 2, 'snooty': 2},
-        'hobby': {'fashion': 2},
+        // Drawing
+        'personality': {'Big sister': 1, 'Lazy': 2, 'Snooty': 2},
+        'hobby': {'Fashion': 2},
       },
       {
-        // Estudiar
-        'personality': {'big sister': 1, 'smug': 2},
-        'hobby': {'education': 2},
+        // Studying
+        'personality': {'Big sister': 1, 'Smug': 2},
+        'hobby': {'Education': 2},
       },
       {
-        // Hacer ejercicio
-        'personality': {'jock': 2, 'peppy': 2},
-        'hobby': {'fitness': 2},
+        // Exercising
+        'personality': {'Jock': 2, 'Peppy': 2},
+        'hobby': {'Fitness': 2},
       },
       {
-        // Jugar videojuegos
-        'personality': {'lazy': 1, 'noral': 2, 'big sister ': 1},
-        'hobby': {'play': 2},
+        // Playing video games
+        'personality': {'Lazy': 1, 'Normal': 2, 'Big sister ': 1},
+        'hobby': {'Play': 2},
       },
       {
-        // Leer libros
-        'personality': {'big sister': 2, 'smug': 2, 'snooty': 2},
-        'hobby': {'education': 2},
+        // Reading books
+        'personality': {'Big sister': 2, 'Smug': 2, 'Snooty': 2},
+        'hobby': {'Education': 2},
       },
       {
-        // Salir de compras
-        'personality': {'big sister': 2, 'peppy': 2, 'snooty': 3},
-        'hobby': {'fashion': 2},
+        // Shopping
+        'personality': {'Big sister': 2, 'Peppy': 2, 'Snooty': 3},
+        'hobby': {'Fashion': 2},
       },
       {
-        // Tocar instrumentos
-        'personality': {'smug': 2, 'peppy': 2},
-        'hobby': {'music': 2},
+        // Playing instruments
+        'personality': {'Smug': 2, 'Peppy': 2},
+        'hobby': {'Music': 2},
       },
     ],
     type: QuestionType.multipleChoice,
   ),
   Question(
-    question: '¿Cuáles son tus asignaturas favoritas?',
+    question: 'What are your favorite subjects?',
     answers: [
-      'Artes',
-      'Ciencias',
-      'Educación Física',
-      'Historia',
-      'Lenguaje',
-      'Matemática',
-      'Música',
+      'Arts',
+      'Sciences',
+      'Physical Education',
+      'History',
+      'Language',
+      'Mathematics',
+      'Music',
     ],
     effects: [
       {
-        // Artes
-        'personality': {'lazy': 2, 'smug': 3, 'peppy': 2},
-        'hobby': {'fashion': 3},
-        'fav_styles': {'elegant': 2, 'gorgeous': 2},
+        // Arts
+        'personality': {'Lazy': 2, 'Smug': 3, 'Peppy': 2},
+        'hobby': {'Fashion': 3},
+        'fav_styles': {'Elegant': 2, 'Gorgeous': 2},
       },
       {
-        // Ciencias
-        'personality': {'normal': 2, 'cranky': 1, 'smug': 2},
-        'fav_styles': {'simple': 1},
-        'hobby': {'education': 2, 'nature': 3},
+        // Sciences
+        'personality': {'Normal': 2, 'Cranky': 1, 'Smug': 2},
+        'fav_styles': {'Simple': 1},
+        'hobby': {'Education': 2, 'Nature': 3},
       },
       {
-        // Educación Física
-        'personality': {'jock': 3, 'peppy': 3},
-        'fav_styles': {'active': 3, 'cool': 1},
-        'hobby': {'fitness': 3},
+        // Physical Education
+        'personality': {'Jock': 3, 'Peppy': 3},
+        'fav_styles': {'Active': 3, 'Cool': 1},
+        'hobby': {'Fitness': 3},
       },
       {
-        // Historia
-        'personality': {'cranky': 2, 'smug': 2, 'snooty': 3},
-        'fav_styles': {'elegant': 2},
-        'hobby': {'education': 3},
+        // History
+        'personality': {'Cranky': 2, 'Smug': 2, 'Snooty': 3},
+        'fav_styles': {'Elegant': 2},
+        'hobby': {'Education': 3},
       },
       {
-        // Lenguaje
-        'personality': {'cranky': 2, 'normal': 3},
-        'fav_styles': {'cute': 1, 'gorgeous': 2},
-        'hobby': {'education': 3},
+        // Language
+        'personality': {'Cranky': 2, 'Normal': 3},
+        'fav_styles': {'Cute': 1, 'Gorgeous': 2},
+        'hobby': {'Education': 3},
       },
       {
-        // Matemática
-        'personality': {'cranky': 2, 'smug': 3},
-        'fav_styles': {'simple': 3, 'elegant': 1},
-        'hobby': {'education': 3},
+        // Mathematics
+        'personality': {'Cranky': 2, 'Smug': 3},
+        'fav_styles': {'Simple': 3, 'Elegant': 1},
+        'hobby': {'Education': 3},
       },
       {
-        // Música
-        'personality': {'lazy': 2},
-        'fav_styles': {'simple': 1},
-        'hobby': {'music': 3, 'play': 1},
+        // Music
+        'personality': {'Lazy': 2},
+        'fav_styles': {'Simple': 1},
+        'hobby': {'Music': 3, 'Play': 1},
       },
     ],
     type: QuestionType.multipleChoice,
   ),
   Question(
-    question: '¿Genero de pelicula favorita?',
+    question: 'Favorite movie genre?',
     answers: [
-      'Acción',
-      'Comedia',
-      'Fantasia',
+      'Action',
+      'Comedy',
+      'Fantasy',
       'Romance',
-      'Terror',
-      'Ciencia Ficcion',
+      'Horror',
+      'Science Fiction',
       'Musical',
-      'Historica',
+      'Historical',
     ],
     effects: [
       {
-        // Accion
-        'personality': {'jock': 2},
+        // Action
+        'personality': {'Jock': 2},
       },
       {
-        // Comedia
-        'personality': {'lazy': 2},
+        // Comedy
+        'personality': {'Lazy': 2},
       },
       {
-        // Fantasia
-        'personality': {'smug': 2},
+        // Fantasy
+        'personality': {'Smug': 2},
       },
       {
         // Romance
-        'personality': {'peppy': 2},
+        'personality': {'Peppy': 2},
       },
       {
-        // Terror
-        'personality': {'big sister': 2},
+        // Horror
+        'personality': {'Big sister': 2},
       },
       {
-        // Ciencia Ficcion
-        'personality': {'normal': 2},
+        // Science Fiction
+        'personality': {'Normal': 2},
       },
       {
         // Musical
-        'personality': {'snooty': 2},
+        'personality': {'Snooty': 2},
       },
       {
-        // Historica
-        'personality': {'cranky': 2},
+        // Historical
+        'personality': {'Cranky': 2},
       },
     ],
   ),
   Question(
-    question: '¿Genero musical favorito?',
-    answers: ['Clásica', 'Jazz', 'Pop', 'Rap', 'Rock', 'Tecno'],
+    question: 'Favorite music genre?',
+    answers: ['Classical', 'Jazz', 'Pop', 'Rap', 'Rock', 'Techno'],
     effects: [
       {
-        // Clasica
-        'fav_styles': {'elegant': 2},
+        // Classical
+        'fav_styles': {'Elegant': 2},
       },
       {
         // Jazz
-        'fav_styles': {'gorgeous': 2},
+        'fav_styles': {'Gorgeous': 2},
       },
       {
         // Pop
-        'fav_styles': {'cute': 2},
+        'fav_styles': {'Cute': 2},
       },
       {
         // Rap
-        'fav_styles': {'active': 2},
+        'fav_styles': {'Active': 2},
       },
       {
         // Rock
-        'fav_styles': {'simple': 2},
+        'fav_styles': {'Simple': 2},
       },
       {
-        // Tecno
-        'fav_styles': {'cool': 2},
+        // Techno
+        'fav_styles': {'Cool': 2},
       },
     ],
   ),
   Question(
-    question: '¿Colores favoritos?',
+    question: 'Favorite colors?',
     answers: [
-      'Amarillo',
-      'Azul',
+      'Yellow',
+      'Blue',
       'Beige',
-      'Blanco',
-      'Cafe',
-      'Celeste',
-      'Gris',
-      'Morado',
-      'Naranja',
-      'Negro',
-      'Rojo',
-      'Rosa',
-      'Verde',
+      'White',
+      'Brown',
+      'Light Blue',
+      'Gray',
+      'Purple',
+      'Orange',
+      'Black',
+      'Red',
+      'Pink',
+      'Green',
     ],
     effects: [
       {
-        // Amarillo
-        'fav_colors': {'yellow': 2, 'colorful': 1},
+        // Yellow
+        'fav_colors': {'Yellow': 2, 'Colorful': 1},
       },
       {
-        // Azul
-        'fav_colors': {'blue': 2, 'colorful': 1},
+        // Blue
+        'fav_colors': {'Blue': 2, 'Colorful': 1},
       },
       {
         // Beige
-        'fav_colors': {'beige': 2},
+        'fav_colors': {'Beige': 2},
       },
       {
-        // Blanco
-        'fav_colors': {'white': 2},
+        // White
+        'fav_colors': {'White': 2},
       },
       {
-        // Cafe
-        'fav_colors': {'brown': 2},
+        // Brown
+        'fav_colors': {'Brown': 2},
       },
       {
-        // Celeste
-        'fav_colors': {'aqua': 2, 'colorful': 1},
+        // Light Blue
+        'fav_colors': {'Aqua': 2, 'Colorful': 1},
       },
       {
-        // Gris
-        'fav_colors': {'gray': 2},
+        // Gray
+        'fav_colors': {'Gray': 2},
       },
       {
-        // Morado
-        'fav_colors': {'purple': 2, 'colorful': 1},
+        // Purple
+        'fav_colors': {'Purple': 2, 'Colorful': 1},
       },
       {
-        // Naranja
-        'fav_colors': {'orange': 2, 'colorful': 1},
+        // Orange
+        'fav_colors': {'Orange': 2, 'Colorful': 1},
       },
       {
-        // Negro
-        'fav_colors': {'black': 2},
+        // Black
+        'fav_colors': {'Black': 2},
       },
       {
-        // Rojo
-        'fav_colors': {'red': 2, 'colorful': 1},
+        // Red
+        'fav_colors': {'Red': 2, 'Colorful': 1},
       },
       {
-        // Rosa
-        'fav_colors': {'pink': 2, 'colorful': 1},
+        // Pink
+        'fav_colors': {'Pink': 2, 'Colorful': 1},
       },
       {
-        // Verde
-        'fav_colors': {'green': 2, 'colorful': 1},
+        // Green
+        'fav_colors': {'Green': 2, 'Colorful': 1},
       },
     ],
     type: QuestionType.multipleChoice,
   ),
   Question(
-    question: '¿Cuál es tu sabor favorito?',
-    answers: ['Ácido', 'Agrio', 'Amargo', 'Dulce', 'Picante', 'Salado'],
+    question: 'What is your favorite flavor?',
+    answers: ['Sour', 'Tart', 'Bitter', 'Sweet', 'Spicy', 'Salty'],
     effects: [
       {
-        // Ácido
+        // Sour
         'species': {
-          'gorilla': 1,
-          'elephant': 1,
-          'monkey': 1,
-          'rhino': 1,
-          'hippo': 1,
-          'tiger': 1,
+          'Gorilla': 1,
+          'Elephant': 1,
+          'Monkey': 1,
+          'Rhino': 1,
+          'Hippo': 1,
+          'Tiger': 1,
         },
       },
       {
-        // Agrio
+        // Tart
         'species': {
-          'eagle': 1,
-          'bear': 1,
-          'goat': 1,
-          'lion': 1,
-          'bird': 1,
-          'penguin': 1,
+          'Eagle': 1,
+          'Bear': 1,
+          'Goat': 1,
+          'Lion': 1,
+          'Bird': 1,
+          'Penguin': 1,
         },
       },
       {
-        // Amargo
+        // Bitter
         'species': {
-          'anteater': 1,
-          'deer': 1,
-          'duck': 1,
-          'frog': 1,
-          'koala': 1,
-          'octopus': 1,
+          'Anteater': 1,
+          'Deer': 1,
+          'Duck': 1,
+          'Frog': 1,
+          'Koala': 1,
+          'Octopus': 1,
         },
       },
       {
-        // Dulce
+        // Sweet
         'species': {
-          'rabbit': 1,
-          'bear cub': 1,
-          'mouse': 1,
-          'hamster': 1,
-          'squirrel': 1,
-          'cat': 1,
+          'Rabbit': 1,
+          'Bear cub': 1,
+          'Mouse': 1,
+          'Hamster': 1,
+          'Squirrel': 1,
+          'Cat': 1,
         },
       },
       {
-        // Picante
+        // Spicy
         'species': {
-          'chicken': 1,
-          'bull': 1,
-          'cow': 1,
-          'pig': 1,
-          'sheep': 1,
-          'wolf': 1,
+          'Chicken': 1,
+          'Bull': 1,
+          'Cow': 1,
+          'Pig': 1,
+          'Sheep': 1,
+          'Wolf': 1,
         },
       },
       {
-        // Salado
+        // Salty
         'species': {
-          'alligator': 1,
-          'horse': 1,
-          'kangaroo': 1,
-          'ostrich': 1,
-          'dog': 1,
+          'Alligator': 1,
+          'Horse': 1,
+          'Kangaroo': 1,
+          'Ostrich': 1,
+          'Dog': 1,
         },
       },
     ],
   ),
   Question(
-    question: '¿Tienes mascotas?',
-    answers: ['Si', 'No'],
+    question: 'Do you have pets?',
+    answers: ['Yes', 'No'],
     effects: [
       {
-        // Si
+        // Yes
         'species': {
-          'bird': 2,
-          'cat': 2,
-          'dog': 2,
-          'duck': 2,
-          'frog': 2,
-          'hamster': 2,
-          'mouse': 2,
-          'rabbit': 2,
-          'squirrel': 2,
+          'Bird': 2,
+          'Cat': 2,
+          'Dog': 2,
+          'Duck': 2,
+          'Frog': 2,
+          'Hamster': 2,
+          'Mouse': 2,
+          'Rabbit': 2,
+          'Squirrel': 2,
         },
       },
       {
         // No
         'species': {
-          'alligator': 2,
-          'anteater': 2,
-          'bear': 2,
-          'bear cub': 2,
-          'bull': 2,
-          'chicken': 2,
-          'cow': 2,
-          'deer': 2,
-          'eagle': 2,
-          'elephant': 2,
-          'goat': 2,
-          'gorilla': 2,
-          'hippo': 2,
-          'horse': 2,
-          'koala': 2,
-          'kangaroo': 2,
-          'lion': 2,
-          'monkey': 2,
-          'octopus': 2,
-          'ostrich': 2,
-          'penguin': 2,
-          'pig': 2,
-          'rhino': 2,
-          'sheep': 2,
-          'tiger': 2,
-          'wolf': 2,
+          'Alligator': 2,
+          'Anteater': 2,
+          'Bear': 2,
+          'Bear cub': 2,
+          'Bull': 2,
+          'Chicken': 2,
+          'Cow': 2,
+          'Deer': 2,
+          'Eagle': 2,
+          'Elephant': 2,
+          'Goat': 2,
+          'Gorilla': 2,
+          'Hippo': 2,
+          'Horse': 2,
+          'Koala': 2,
+          'Kangaroo': 2,
+          'Lion': 2,
+          'Monkey': 2,
+          'Octopus': 2,
+          'Ostrich': 2,
+          'Penguin': 2,
+          'Pig': 2,
+          'Rhino': 2,
+          'Sheep': 2,
+          'Tiger': 2,
+          'Wolf': 2,
         },
       },
     ],

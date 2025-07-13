@@ -17,10 +17,16 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
+          Expanded(
+            child: Image.asset(
+              'assets/images/logo.png',
+              fit: BoxFit.cover,
+            )
+          ),
           HomeVillagerWidget(
             onTakeTest: onTakeTest,
             onViewVillagers: onViewVillagers,

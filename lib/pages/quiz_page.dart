@@ -3,6 +3,7 @@ import 'package:crossing_catalogue/pages/share_result_page.dart';
 import 'package:crossing_catalogue/services/api_service.dart';
 import 'package:flutter/material.dart';
 import 'package:crossing_catalogue/widgets/question_widget.dart';
+import 'package:logger/web.dart';
 
 class QuizPage extends StatefulWidget {
   final String title;
@@ -25,12 +26,13 @@ class _QuizState extends State<QuizPage> {
     );
     if (!mounted) return;
 
+
     if (villagers.isEmpty) {
       showDialog(
         context: context,
         builder: (_) => const AlertDialog(
-          title: Text('Sin coincidencias'),
-          content: Text('No se encontró ningún aldeano compatible.'),
+          title: Text('No matches'),
+          content: Text('No compatible villager was found.'),
         ),
       );
     } else {
@@ -39,7 +41,7 @@ class _QuizState extends State<QuizPage> {
       showDialog(
         context: context,
         builder: (_) => AlertDialog(
-          title: const Text('¡Tu aldeano ideal es!'),
+          title: const Text('Your ideal villager is...'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -57,7 +59,7 @@ class _QuizState extends State<QuizPage> {
                   ),
                 ),
                 icon: const Icon(Icons.share),
-                label: const Text('Ir a Compartir'),
+                label: const Text('Share results'),
               ),
             ],
           ),
@@ -95,10 +97,12 @@ class _QuizState extends State<QuizPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
-      body: QuestionWidget(
-        question: widget.questions[index],
-        onAnswered: onOptionsSelected,
+      body: 
+        Center(child: 
+          QuestionWidget(
+          question: widget.questions[index],
+          onAnswered: onOptionsSelected,
+        )
       ),
     );
   }

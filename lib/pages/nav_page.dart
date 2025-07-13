@@ -52,26 +52,17 @@ class NavPageState extends State<NavPage> {
       case 1:
         return isOnline ? 
           QuizPage(
-            title: 'test de personalidad',
+            title: 'Personality Test',
             questions: personalityQuestions,) : 
           Center(child: const Text('No internet, try again later.'));
 
       case 2: 
-        setState(() {
-          currentTitle = 'Villagers';
-        });
         return isOnline ? 
           VillagerCataloguePage(title: 'Catalogue', isOnline: isOnline,) : 
           Center(child: const Text('No internet, try again later.'));
       case 3:
-        setState(() {
-          currentTitle = 'Collection';
-        });
         return _buildCollection();
       default: 
-        setState(() {
-          currentTitle = 'Crossing Catalogue';
-        });
         return HomePage(
           onViewVillagers: () {
               setState(() {
@@ -159,6 +150,12 @@ Widget build(BuildContext context) {
     onlineCheck();
     setState(() {
       currentPage = value;
+      switch(currentPage) {
+        case 0: currentTitle = 'Crossing Catalogue';
+        case 1: currentTitle = 'Villager Test';
+        case 2: currentTitle = 'Villager Catalogue';
+        case 3: currentTitle = 'Collection';
+      }
     });
   }
 

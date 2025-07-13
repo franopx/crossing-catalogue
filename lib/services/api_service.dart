@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:crossing_catalogue/domain/entities/villager_entity.dart';
 import 'package:crossing_catalogue/domain/entities/villager_match_entity.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 
@@ -24,7 +25,6 @@ class ServiceVillager {
     final url = Uri.parse('$villagerUrl?api_key=$apiKey&$searchQuery');
     final response = await http.get(url);
 
-    var logger = Logger();
 
     if (response.statusCode == 200) {
       return response.body;
@@ -85,6 +85,14 @@ class ServiceVillager {
     }
 
     return ranked;
+  }
+
+
+  String capitalize(String text) {
+    if (text.isEmpty) {
+      return text;
+    }
+    return text[0].toUpperCase() + text.substring(1);
   }
 
   int scoreVillager(Villager v, Map<String, Map<String, int>> votes) {

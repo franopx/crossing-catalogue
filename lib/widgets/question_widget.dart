@@ -18,6 +18,20 @@ class QuestionWidget extends StatefulWidget {
 class _QuestionWidgetState extends State<QuestionWidget> {
   Set<int> selectedIndexes = {};
 
+
+  @override
+  void didUpdateWidget(covariant QuestionWidget oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // Check if the question has changed
+    if (widget.question != oldWidget.question) {
+      // Clear selected indexes when the question changes
+      setState(() {
+        selectedIndexes.clear();
+      });
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -60,7 +74,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                   onPressed: selectedIndexes.isNotEmpty
                       ? () => widget.onAnswered(selectedIndexes.toList())
                       : null,
-                  child: const Text('Confirmar Seleccion'),
+                  child: const Text('Confirm Selection'),
                 ),
             ],
           ),
