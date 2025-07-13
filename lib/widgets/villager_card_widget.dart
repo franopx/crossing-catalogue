@@ -11,7 +11,6 @@ class VillagerCard extends StatelessWidget {
       width: 300,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white,
         borderRadius: BorderRadius.circular(24),
         boxShadow: const [BoxShadow(blurRadius: 10, color: Colors.black26)],
       ),
