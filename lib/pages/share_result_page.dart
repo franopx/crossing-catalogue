@@ -42,7 +42,7 @@ class _ShareResultState extends State<ShareResult> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Tu Aldeano Ideal')),
+      appBar: AppBar(title: const Text('Your Ideal Villager')),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -55,7 +55,7 @@ class _ShareResultState extends State<ShareResult> {
             ElevatedButton.icon(
               onPressed: shareVillagerCard,
               icon: const Icon(Icons.share),
-              label: const Text('Compartir'),
+              label: const Text('Share'),
             ),
           ],
         ),

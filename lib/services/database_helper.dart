@@ -17,7 +17,7 @@ class DatabaseHelper {
   }
 
   DatabaseHelper._internal();
-  
+
   Future<void> initializeDatabase() async {
     var db = await database;
 
@@ -30,7 +30,7 @@ class DatabaseHelper {
     } else {
       print('La tabla fishItem tiene $count elementos');
     }
-    
+
     await database;
   }
 
@@ -43,17 +43,12 @@ class DatabaseHelper {
   Future<Database> _initDatabase() async {
     final dbPath = await getDatabasesPath();
     final path = join(dbPath, 'item_database.db');
-    
+
     Database db;
-    db = await openDatabase(
-      path,
-      version: 1,
-      onCreate: _onCreate,
-    );
+    db = await openDatabase(path, version: 1, onCreate: _onCreate);
 
     return db;
   }
-
 
   Future<void> _onCreate(Database db, int version) async {
     await db.execute('''
@@ -101,16 +96,15 @@ class DatabaseHelper {
     ''');
   }
 
-
   Future<int> insertConcept(ItemData data) async {
-  final db = await database;
-  
-  String table = '${data.type}Item';
-  
-  return await db.insert(
-    table,
-    data.toMap(),
-    conflictAlgorithm: ConflictAlgorithm.replace,
+    final db = await database;
+
+    String table = '${data.type}Item';
+
+    return await db.insert(
+      table,
+      data.toMap(),
+      conflictAlgorithm: ConflictAlgorithm.replace,
     );
   }
 
@@ -118,8 +112,8 @@ class DatabaseHelper {
     final db = await database;
     return await db.delete(
       '${type}Item',
-      where: 'name = ?', 
-      whereArgs: [itemName], 
+      where: 'name = ?',
+      whereArgs: [itemName],
     );
   }
 
@@ -128,9 +122,12 @@ class DatabaseHelper {
     final List<Map<String, dynamic>> fishMap = await db.query('fishItem');
     final List<Map<String, dynamic>> bugMap = await db.query('bugItem');
     final List<Map<String, dynamic>> fossilMap = await db.query('fossilItem');
-    final List<Map<String, dynamic>> seaCreatureMap = await db.query('seaCreatureItem');
+    final List<Map<String, dynamic>> seaCreatureMap = await db.query(
+      'seaCreatureItem',
+    );
 
-    final List<Map<String, dynamic>> maps = fishMap + bugMap + fossilMap + seaCreatureMap;
+    final List<Map<String, dynamic>> maps =
+        fishMap + bugMap + fossilMap + seaCreatureMap;
     // Convierte cada Map a un objeto CardData
     return List.generate(maps.length, (i) {
       return ItemData(
@@ -139,7 +136,7 @@ class DatabaseHelper {
         url: maps[i]['url'],
         imageUrl: maps[i]['image_url'],
         renderUrl: maps[i]['render_url'],
-        obtained: maps[i]['obtained'] == 1 ? true : false // String -> DateTime
+        obtained: maps[i]['obtained'] == 1 ? true : false, // String -> DateTime
       );
     });
   }
@@ -153,14 +150,14 @@ class DatabaseHelper {
       limit: 1,
     );
 
-    if(maps.isNotEmpty) {
+    if (maps.isNotEmpty) {
       return ItemData(
         name: maps[0]['name'],
         type: maps[0]['type'],
         url: maps[0]['url'],
         imageUrl: maps[0]['image_url'],
         renderUrl: maps[0]['render_url'],
-        obtained: maps[0]['obtained'] == 1 ? true : false // String -> DateTime
+        obtained: maps[0]['obtained'] == 1 ? true : false, // String -> DateTime
       );
     }
     return null;
@@ -169,41 +166,40 @@ class DatabaseHelper {
   Future<int> markObtained(String name, String type, bool value) async {
     ItemData? currentItem = await getConcept(name, type);
 
-    if(currentItem != null) {
+    if (currentItem != null) {
       final db = await database;
-      
+
       ItemData newItem = ItemData(
-        name: currentItem.name, 
-        type: currentItem.type, 
-        url: currentItem.url, 
+        name: currentItem.name,
+        type: currentItem.type,
+        url: currentItem.url,
         imageUrl: currentItem.imageUrl,
-        renderUrl: currentItem.renderUrl, 
-        obtained: value
+        renderUrl: currentItem.renderUrl,
+        obtained: value,
       );
 
       return await db.update(
         '${newItem.type}Item',
         newItem.toMap(),
         where: 'name = ?',
-        whereArgs: [name]
-        );
+        whereArgs: [name],
+      );
     }
     return -1;
   }
 
-
   Future<int> updateConcept(String name, ItemData newItem) async {
     ItemData? currentItem = await getConcept(name, newItem.type);
 
-    if(currentItem != null) {
+    if (currentItem != null) {
       final db = await database;
-      
+
       return await db.update(
         '${newItem.type}Item',
         newItem.toMap(),
         where: 'name = ?',
-        whereArgs: [name]
-        );
+        whereArgs: [name],
+      );
     }
     return -1;
   }
@@ -224,7 +220,6 @@ class DatabaseHelper {
   final seaCreatureList = <ItemData>[];
 
   Future<List<ItemData>> getJson() async {
-    
     if (await NetworkStatus.isOnline == false) {
       return [];
     }
@@ -234,27 +229,28 @@ class DatabaseHelper {
 
     var bugJsonRaw = await itemRequest.getItem('thumbsize=48', 'bug');
     bugJson = jsonDecode(bugJsonRaw);
-    
+
     var fossilJsonRaw = await itemRequest.getItem('thumbsize=48', 'fossil');
     fossilJson = jsonDecode(fossilJsonRaw);
-    
-    var seaCreatureJsonRaw = await itemRequest.getItem('thumbsize=48', 'seaCreature');
+
+    var seaCreatureJsonRaw = await itemRequest.getItem(
+      'thumbsize=48',
+      'seaCreature',
+    );
     seaCreatureJson = jsonDecode(seaCreatureJsonRaw);
 
     itemsJson = {
-      'fish' : fishJson,
-      'bug' : bugJson,
-      'fossil' : fossilJson,
-      'seaCreature' : seaCreatureJson
+      'fish': fishJson,
+      'bug': bugJson,
+      'fossil': fossilJson,
+      'seaCreature': seaCreatureJson,
     };
-
 
     for (var categoryEntry in itemsJson.entries) {
       String category = categoryEntry.key;
       List<dynamic> itemList = categoryEntry.value as List<dynamic>;
 
-      for(var itemEntry in itemList) {
-        
+      for (var itemEntry in itemList) {
         var name = itemEntry['name'];
         var type = category;
         var url = itemEntry['url'];
@@ -262,14 +258,20 @@ class DatabaseHelper {
         var renderUrl = itemEntry['render_url'] ?? '';
         var obtained = false;
 
-        ItemData item = ItemData(name: name, type: type, url: url, renderUrl: renderUrl, imageUrl: imageUrl, obtained: obtained);
-        
+        ItemData item = ItemData(
+          name: name,
+          type: type,
+          url: url,
+          renderUrl: renderUrl,
+          imageUrl: imageUrl,
+          obtained: obtained,
+        );
+
         allItems.add(item);
       }
     }
 
-  return allItems;
-
+    return allItems;
   }
 
   Future<void> fillDB() async {
@@ -278,7 +280,5 @@ class DatabaseHelper {
     for (var item in items) {
       insertConcept(item);
     }
-
   }
-
 }

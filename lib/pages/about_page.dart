@@ -6,18 +6,46 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Card(
+      body: Center(
         child: Padding(
           padding: EdgeInsets.all(16),
           child: Column(
             children: [
-              const Text(
-                'Crossing Catalogue lets you take quizzes to find out which Animal Crossing: New Horizons villager is most like you or is best suited to your current island, you can also view a list to learn about available villagers and keep track of your progress in the game',
+              Card(
+                //margin: EdgeInsets.all(16),
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: const Text(
+                    'Crossing Catalogue lets you take quizzes to find out which Animal Crossing: New Horizons villager is most like you or is best suited to your current island, you can also view a list to learn about available villagers and keep track of your progress in the game',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ),
               ),
-              SizedBox(height: 12),
-              const Text('Developers:\nFrancisco Galeno\nMatías Oyarzún'),
-              const Text(
-                'Contacts:\nfgaleno21@alumnos.utalca.cl\nmoyarzun22@alumnos.utalca.cl',
+              SizedBox(height: 8),
+              Card(
+                // margin: EdgeInsets.all(16),
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      const Text('Developers:', style: TextStyle(fontSize: 16)),
+                      const Text(
+                        'Francisco Galeno - Matías Oyarzún',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      const SizedBox(height: 8),
+                      const Text('Contacts:', style: TextStyle(fontSize: 16)),
+                      const Text(
+                        'fgaleno21@alumnos.utalca.cl',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      const Text(
+                        'moyarzun22@alumnos.utalca.cl',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),

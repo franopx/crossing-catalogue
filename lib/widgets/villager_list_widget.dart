@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:crossing_catalogue/domain/entities/villager_list_entity.dart';
 import 'package:crossing_catalogue/widgets/villager_item_widget.dart';
 import 'package:crossing_catalogue/domain/entities/villager_entity.dart';
-import 'package:logger/web.dart';
 
 class VillagerListWidget extends StatefulWidget {
   const VillagerListWidget({super.key});
@@ -32,21 +31,22 @@ class _VillagerListWidgetState extends State<VillagerListWidget> {
 
   Future<void> fetchVillagers() async {
     allVillagers = await list.getAllVillagers();
-    
-    if(mounted){
+
+    if (mounted) {
       setState(() {
         isLoading = false;
         applyFilters();
       });
     }
-
   }
 
   void applyFilters() {
     List<Villager> filtered = List.from(allVillagers);
 
     if (selectedPersonality != 'All') {
-      filtered = filtered.where((v) => v.personality == selectedPersonality).toList();
+      filtered = filtered
+          .where((v) => v.personality == selectedPersonality)
+          .toList();
     }
 
     if (selectedSpecies != 'All') {
@@ -54,7 +54,11 @@ class _VillagerListWidgetState extends State<VillagerListWidget> {
     }
 
     if (searchQuery.isNotEmpty) {
-      filtered = filtered.where((v) => v.name.toLowerCase().contains(searchQuery.toLowerCase())).toList();
+      filtered = filtered
+          .where(
+            (v) => v.name.toLowerCase().contains(searchQuery.toLowerCase()),
+          )
+          .toList();
     }
 
     filtered.sort((a, b) {
@@ -95,8 +99,14 @@ class _VillagerListWidgetState extends State<VillagerListWidget> {
       return const Center(child: CircularProgressIndicator());
     }
 
-    final personalities = ['All', ...{for (var v in allVillagers) v.personality}];
-    final speciesList = ['All', ...{for (var v in allVillagers) v.species}];
+    final personalities = [
+      'All',
+      ...{for (var v in allVillagers) v.personality},
+    ];
+    final speciesList = [
+      'All',
+      ...{for (var v in allVillagers) v.species},
+    ];
 
     return Column(
       children: [
@@ -110,7 +120,9 @@ class _VillagerListWidgetState extends State<VillagerListWidget> {
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               IconButton(
-                icon: Icon(showFilters ? Icons.filter_alt_off : Icons.filter_alt),
+                icon: Icon(
+                  showFilters ? Icons.filter_alt_off : Icons.filter_alt,
+                ),
                 tooltip: showFilters ? 'Hide filters' : 'Show filters',
                 onPressed: () {
                   setState(() {
@@ -206,14 +218,25 @@ class _VillagerListWidgetState extends State<VillagerListWidget> {
                             }
                           },
                           items: const [
-                            DropdownMenuItem(value: 'name', child: Text('Name')),
-                            DropdownMenuItem(value: 'personality', child: Text('Personality')),
-                            DropdownMenuItem(value: 'species', child: Text('Species')),
+                            DropdownMenuItem(
+                              value: 'name',
+                              child: Text('Name'),
+                            ),
+                            DropdownMenuItem(
+                              value: 'personality',
+                              child: Text('Personality'),
+                            ),
+                            DropdownMenuItem(
+                              value: 'species',
+                              child: Text('Species'),
+                            ),
                           ],
                         ),
                       ),
                       IconButton(
-                        icon: Icon(ascending ? Icons.arrow_upward : Icons.arrow_downward),
+                        icon: Icon(
+                          ascending ? Icons.arrow_upward : Icons.arrow_downward,
+                        ),
                         onPressed: () {
                           ascending = !ascending;
                           applyFilters();

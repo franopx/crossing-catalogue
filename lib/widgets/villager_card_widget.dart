@@ -28,7 +28,7 @@ class VillagerCard extends StatelessWidget {
           Text('Species ${villager.species}'),
           Text('Personality ${villager.personality}'),
           Text('Month of Birth: ${villager.birthmonth}'),
-          Text('Hobby ${villager.hobby}'),
+          Text('Hobby: ${villager.hobby}'),
         ],
       ),
     );

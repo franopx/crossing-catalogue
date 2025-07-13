@@ -3,7 +3,6 @@ import 'package:crossing_catalogue/pages/share_result_page.dart';
 import 'package:crossing_catalogue/services/api_service.dart';
 import 'package:flutter/material.dart';
 import 'package:crossing_catalogue/widgets/question_widget.dart';
-import 'package:logger/web.dart';
 
 class QuizPage extends StatefulWidget {
   final String title;
@@ -25,7 +24,6 @@ class _QuizState extends State<QuizPage> {
       votes: attributeVotes,
     );
     if (!mounted) return;
-
 
     if (villagers.isEmpty) {
       showDialog(
@@ -97,12 +95,12 @@ class _QuizState extends State<QuizPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: 
-        Center(child: 
-          QuestionWidget(
+      appBar: AppBar(title: Text(widget.title)),
+      body: Center(
+        child: QuestionWidget(
           question: widget.questions[index],
           onAnswered: onOptionsSelected,
-        )
+        ),
       ),
     );
   }

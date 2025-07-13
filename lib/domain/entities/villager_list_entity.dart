@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:crossing_catalogue/domain/entities/villager_entity.dart';
 import 'package:crossing_catalogue/services/api_service.dart';
-import 'package:logger/web.dart';
 
 class VillagerList {
   var villagerRequest = ServiceVillager('');

@@ -1,3 +1,4 @@
+import 'package:crossing_catalogue/pages/about_page.dart';
 import 'package:crossing_catalogue/pages/collection_page.dart';
 import 'package:crossing_catalogue/pages/home_page.dart';
 import 'package:crossing_catalogue/pages/preferences_page.dart';
@@ -52,8 +53,13 @@ class NavPageState extends State<NavPage> {
         return isOnline
             ? VillagerCataloguePage(title: 'Catalogue', isOnline: isOnline)
             : Center(child: const Text('No internet, try again later.'));
+
       case 3:
         return _buildCollection();
+
+      case 4:
+        return About();
+
       default:
         return HomePage(
           onViewVillagers: () {
@@ -152,6 +158,8 @@ class NavPageState extends State<NavPage> {
           currentTitle = 'Villager Catalogue';
         case 3:
           currentTitle = 'Collection';
+        case 4:
+          currentTitle = 'About us';
       }
     });
   }

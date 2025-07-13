@@ -22,14 +22,18 @@ class QuizOptionWidget extends StatelessWidget {
       ),
       onPressed: onPressed,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             title,
             style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 4),
-          Text(subtitle, style: const TextStyle(fontSize: 14)),
+          Text(
+            subtitle,
+            style: const TextStyle(fontSize: 14),
+            textAlign: TextAlign.center,
+          ),
         ],
       ),
     );
