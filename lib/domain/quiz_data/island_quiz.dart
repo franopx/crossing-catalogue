@@ -8,79 +8,79 @@ final List<Question> islandQuestions = [
       {
         // Rural
         'species': {
-          'pig': 1,
-          'cow': 1,
-          'chicken': 1,
-          'bull': 1,
-          'sheep': 1,
-          'goat': 1,
+          'Pig': 1,
+          'Cow': 1,
+          'Chicken': 1,
+          'Bull': 1,
+          'Sheep': 1,
+          'Goat': 1,
         },
-        'personality': {'jock': 1, 'big sister': 1},
-        'hobby': {'fitness': 1, 'education': 1},
+        'personality': {'Jock': 1, 'Big sister': 1},
+        'hobby': {'Fitness': 1, 'Education': 1},
       },
       {
         // Cute
         'species': {
-          'squirrel': 1,
-          'hamster': 1,
-          'bear cub': 1,
-          'penguin': 1,
-          'rabbit': 1,
-          'deer': 1,
+          'Squirrel': 1,
+          'Hamster': 1,
+          'Bear cub': 1,
+          'Penguin': 1,
+          'Rabbit': 1,
+          'Deer': 1,
         },
-        'personality': {'peppy': 1, 'snooty': 1},
-        'hobby': {'fashion': 1, 'play': 1},
+        'personality': {'Peppy': 1, 'Snooty': 1},
+        'hobby': {'Fashion': 1, 'Play': 1},
       },
       {
         // Urban
         'species': {
-          'cat': 1,
-          'dog': 1,
-          'mouse': 1,
-          'bird': 1,
-          'octopus': 1,
-          'kangaroo': 1,
+          'Cat': 1,
+          'Dog': 1,
+          'Mouse': 1,
+          'Bird': 1,
+          'Octopus': 1,
+          'Kangaroo': 1,
         },
-        'personality': {'lazy': 1, 'snooty': 1},
-        'hobby': {'fashion': 1, 'education': 1},
+        'personality': {'Lazy': 1, 'Snooty': 1},
+        'hobby': {'Fashion': 1, 'Education': 1},
       },
       {
         // Medieval
         'species': {
-          'lion': 1,
-          'horse': 1,
-          'bear': 1,
-          'eagle': 1,
-          'wolf': 1,
-          'elephant': 1,
+          'Lion': 1,
+          'Horse': 1,
+          'Bear': 1,
+          'Eagle': 1,
+          'Wolf': 1,
+          'Elephant': 1,
         },
-        'personality': {'jock': 1, 'cranky': 1},
-        'hobby': {'education': 1, 'music': 1},
+        'personality': {'Jock': 1, 'Cranky': 1},
+        'hobby': {'Education': 1, 'Music': 1},
       },
       {
         // Natural
         'species': {
-          'tiger': 1,
-          'koala': 1,
-          'monkey': 1,
-          'rhino': 1,
-          'hippo': 1,
-          'alligator': 1,
+          'Tiger': 1,
+          'Koala': 1,
+          'Monkey': 1,
+          'Rhino': 1,
+          'Hippo': 1,
+          'Alligator': 1,
         },
-        'personality': {'normal': 1, 'peppy': 1},
-        'hobby': {'nature': 1, 'play': 1},
+        'personality': {'Normal': 1, 'Peppy': 1},
+        'hobby': {'Nature': 1, 'Play': 1},
       },
       {
         // Messy
         'species': {
-          'gorilla': 1,
-          'anteater': 1,
-          'ostrich': 1,
-          'frog': 1,
-          'duck': 1,
+          'Gorilla': 1,
+          'Anteater': 1,
+          'Ostrich': 1,
+          'Frog': 1,
+          'Duck': 1,
         },
-        'personality': {'lazy': 1, 'cranky': 1},
-        'hobby': {'music': 1, 'fitness': 1},
+        'personality': {'Lazy': 1, 'Cranky': 1},
+        'hobby': {'Music': 1, 'Fitness': 1},
       },
     ],
   ),
@@ -90,27 +90,27 @@ final List<Question> islandQuestions = [
     effects: [
       {
         // Cute
-        'personality': {'smug': 1, 'snooty': 1},
-        'fav_styles': {'cute': 1, 'elegant': 1, 'gorgeous': 1},
-        'hobby': {'fashion': 1, 'education': 1, 'nature': 1},
+        'personality': {'Smug': 1, 'Snooty': 1},
+        'fav_styles': {'Cute': 1, 'Elegant': 1, 'Gorgeous': 1},
+        'hobby': {'Fashion': 1, 'Education': 1, 'Nature': 1},
       },
       {
         // Funny
-        'personality': {'lazy': 1, 'normal': 1},
-        'fav_styles': {'simple': 1, 'active': 1, 'cute': 1},
-        'hobby': {'play': 1, 'music': 1, 'fashion': 1},
+        'personality': {'Lazy': 1, 'Normal': 1},
+        'fav_styles': {'Simple': 1, 'Active': 1, 'Cute': 1},
+        'hobby': {'Play': 1, 'Music': 1, 'Fashion': 1},
       },
       {
         // Weird
-        'personality': {'cranky': 1, 'big sister': 1},
-        'fav_styles': {'elegant': 1, 'cool': 1, 'gorgeous': 1},
-        'hobby': {'play': 1, 'nature': 1, 'fitness': 1},
+        'personality': {'Cranky': 1, 'Big sister': 1},
+        'fav_styles': {'Elegant': 1, 'Cool': 1, 'Gorgeous': 1},
+        'hobby': {'Play': 1, 'Nature': 1, 'Fitness': 1},
       },
       {
         // Cool
-        'personality': {'jock': 1, 'peppy': 1},
-        'fav_styles': {'cool': 1, 'active': 1, 'simple': 1},
-        'hobby': {'education': 1, 'music': 1, 'fitness': 1},
+        'personality': {'Jock': 1, 'Peppy': 1},
+        'fav_styles': {'Cool': 1, 'Active': 1, 'Simple': 1},
+        'hobby': {'Education': 1, 'Music': 1, 'Fitness': 1},
       },
     ],
   ),
@@ -125,19 +125,19 @@ final List<Question> islandQuestions = [
     effects: [
       {
         // Daily Tasks
-        'personality': {'smug': 1, 'snooty': 1},
+        'personality': {'Smug': 1, 'Snooty': 1},
       },
       {
         // Talk to Villagers
-        'personality': {'lazy': 1, 'normal': 1},
+        'personality': {'Lazy': 1, 'Normal': 1},
       },
       {
         // Visit Friends
-        'personality': {'cranky': 1, 'big sister': 1},
+        'personality': {'Cranky': 1, 'Big sister': 1},
       },
       {
         // Mystery Islands
-        'personality': {'jock': 1, 'peppy': 1},
+        'personality': {'Jock': 1, 'Peppy': 1},
       },
     ],
     type: QuestionType.multipleChoice,
@@ -148,19 +148,19 @@ final List<Question> islandQuestions = [
     effects: [
       {
         // Summer
-        'birthmonth': {'jan': 3, 'feb': 3, 'mar': 3},
+        'birthmonth': {'Jan': 3, 'Feb': 3, 'Mar': 3},
       },
       {
         // Autumn
-        'birthmonth': {'apr': 3, 'may': 3, 'jun': 3},
+        'birthmonth': {'Apr': 3, 'May': 3, 'Jun': 3},
       },
       {
         // Winter
-        'birthmonth': {'jul': 3, 'aug': 3, 'sep': 3},
+        'birthmonth': {'Jul': 3, 'Aug': 3, 'Sep': 3},
       },
       {
         // Spring
-        'birthmonth': {'oct': 3, 'nov': 3, 'dec': 3},
+        'birthmonth': {'Oct': 3, 'Nov': 3, 'Dec': 3},
       },
     ],
     type: QuestionType.multipleChoice,
@@ -171,19 +171,19 @@ final List<Question> islandQuestions = [
     effects: [
       {
         // 1 day
-        'hobby': {'education': 1},
+        'hobby': {'Education': 1},
       },
       {
         // 3 days
-        'hobby': {'music': 1},
+        'hobby': {'Music': 1},
       },
       {
         // 5 days
-        'hobby': {'fitness': 1},
+        'hobby': {'Fitness': 1},
       },
       {
         // Every day
-        'hobby': {'play': 1},
+        'hobby': {'Play': 1},
       },
     ],
   ),
@@ -201,70 +201,70 @@ final List<Question> islandQuestions = [
       {
         // 8:00 AM
         'personality': {
-          'lazy': 1,
-          'jock': 1,
-          'cranky': 1,
-          'smug': 1,
-          'normal': 1,
-          'peppy': 1,
-          'snooty': 1,
-          'big sister': 1,
+          'Lazy': 1,
+          'Jock': 1,
+          'Cranky': 1,
+          'Smug': 1,
+          'Normal': 1,
+          'Peppy': 1,
+          'Snooty': 1,
+          'Big sister': 1,
         },
       },
       {
         // 12:00 PM
         'personality': {
-          'lazy': 1,
-          'jock': 1,
-          'cranky': 1,
-          'smug': 1,
-          'normal': 1,
-          'peppy': 1,
-          'snooty': 1,
-          'big sister': 1,
+          'Lazy': 1,
+          'Jock': 1,
+          'Cranky': 1,
+          'Smug': 1,
+          'Normal': 1,
+          'Peppy': 1,
+          'Snooty': 1,
+          'Big sister': 1,
         },
       },
       {
         // 4:00 PM
         'personality': {
-          'lazy': 1,
-          'jock': 1,
-          'cranky': 1,
-          'smug': 1,
-          'normal': 1,
-          'peppy': 1,
-          'snooty': 1,
-          'big sister': 1,
+          'Lazy': 1,
+          'Jock': 1,
+          'Cranky': 1,
+          'Smug': 1,
+          'Normal': 1,
+          'Peppy': 1,
+          'Snooty': 1,
+          'Big sister': 1,
         },
       },
       {
         // 8:00 PM
         'personality': {
-          'lazy': 1,
-          'jock': 1,
-          'cranky': 1,
-          'smug': 1,
-          'normal': 1,
-          'peppy': 1,
-          'snooty': 1,
-          'big sister': 1,
+          'Lazy': 1,
+          'Jock': 1,
+          'Cranky': 1,
+          'Smug': 1,
+          'Normal': 1,
+          'Peppy': 1,
+          'Snooty': 1,
+          'Big sister': 1,
         },
       },
       {
         // 12:00 AM
         'personality': {
-          'jock': 1,
-          'cranky': 1,
-          'smug': 1,
-          'normal': 1,
-          'peppy': 1,
-          'snooty': 1,
-          'big sister': 1,
+          'Jock': 1,
+          'Cranky': 1,
+          'Smug': 1,
+          'Normal': 1,
+          'Peppy': 1,
+          'Snooty': 1,
+          'Big sister': 1,
         },
       },
       {
         // 4:00 AM
-        'personality': {'jock': 1, 'cranky': 1, 'smug': 1, 'peppy': 1},
+        'personality': {'Jock': 1, 'Cranky': 1, 'Smug': 1, 'Peppy': 1},
       },
     ],
     type: QuestionType.multipleChoice,
@@ -282,27 +282,27 @@ final List<Question> islandQuestions = [
     effects: [
       {
         // I have not unlocked them
-        'fav_styles': {'simple': 1},
+        'fav_styles': {'Simple': 1},
       },
       {
         // 1 star
-        'fav_styles': {'cool': 1},
+        'fav_styles': {'Cool': 1},
       },
       {
         // 2 stars
-        'fav_styles': {'active': 1},
+        'fav_styles': {'Active': 1},
       },
       {
         // 3 stars
-        'fav_styles': {'cute': 1},
+        'fav_styles': {'Cute': 1},
       },
       {
         // 4 stars
-        'fav_styles': {'gorgeous': 1},
+        'fav_styles': {'Gorgeous': 1},
       },
       {
         // 5 stars
-        'fav_styles': {'elegant': 1},
+        'fav_styles': {'Elegant': 1},
       },
     ],
   ),
@@ -319,27 +319,27 @@ final List<Question> islandQuestions = [
     effects: [
       {
         // Apples
-        'fav_colors': {'red': 1, 'yellow': 1, 'brown': 1},
+        'fav_colors': {'Red': 1, 'Yellow': 1, 'Brown': 1},
       },
       {
         // Cherries
-        'fav_colors': {'red': 2, 'green': 1},
+        'fav_colors': {'Red': 2, 'Green': 1},
       },
       {
         // Oranges
-        'fav_colors': {'orange': 2, 'green': 1},
+        'fav_colors': {'Orange': 2, 'Green': 1},
       },
       {
         // Peaches
-        'fav_colors': {'pink': 2, 'white': 1},
+        'fav_colors': {'Pink': 2, 'White': 1},
       },
       {
         // Pears
-        'fav_colors': {'green': 1, 'yellow': 1, 'brown': 1},
+        'fav_colors': {'Green': 1, 'Yellow': 1, 'Brown': 1},
       },
       {
         // Coconuts
-        'fav_colors': {'green': 3},
+        'fav_colors': {'Green': 3},
       },
     ],
     type: QuestionType.multipleChoice,
@@ -351,46 +351,46 @@ final List<Question> islandQuestions = [
       {
         // Yes
         'species': {
-          'alligator': 1,
-          'anteater': 1,
-          'bear': 1,
-          'bear cub': 1,
-          'bird': 1,
-          'bull': 1,
-          'cat': 1,
-          'chicken': 1,
-          'cow': 1,
-          'deer': 1,
-          'dog': 1,
-          'duck': 1,
-          'eagle': 1,
-          'elephant': 1,
-          'frog': 1,
-          'goat': 1,
-          'gorilla': 1,
-          'hamster': 1,
+          'Alligator': 1,
+          'Anteater': 1,
+          'Bear': 1,
+          'Bear cub': 1,
+          'Bird': 1,
+          'Bull': 1,
+          'Cat': 1,
+          'Chicken': 1,
+          'Cow': 1,
+          'Deer': 1,
+          'Dog': 1,
+          'Duck': 1,
+          'Eagle': 1,
+          'Elephant': 1,
+          'Frog': 1,
+          'Goat': 1,
+          'Gorilla': 1,
+          'Hamster': 1,
         },
       },
       {
         // No
         'species': {
-          'hippo': 1,
-          'horse': 1,
-          'kangaroo': 1,
-          'koala': 1,
-          'lion': 1,
-          'monkey': 1,
-          'mouse': 1,
-          'octopus': 1,
-          'ostrich': 1,
-          'penguin': 1,
-          'pig': 1,
-          'rabbit': 1,
-          'rhino': 1,
-          'sheep': 1,
-          'squirrel': 1,
-          'tiger': 1,
-          'wolf': 1,
+          'Hippo': 1,
+          'Horse': 1,
+          'Kangaroo': 1,
+          'Koala': 1,
+          'Lion': 1,
+          'Monkey': 1,
+          'Mouse': 1,
+          'Octopus': 1,
+          'Ostrich': 1,
+          'Penguin': 1,
+          'Pig': 1,
+          'Rabbit': 1,
+          'Rhino': 1,
+          'Sheep': 1,
+          'Squirrel': 1,
+          'Tiger': 1,
+          'Wolf': 1,
         },
       },
     ],
