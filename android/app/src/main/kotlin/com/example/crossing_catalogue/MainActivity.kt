@@ -1,4 +1,4 @@
-package com.example.crossing_catalogue
+package com.islanders.crossing_catalogue
 
 import io.flutter.embedding.android.FlutterActivity
 
