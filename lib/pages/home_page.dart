@@ -1,46 +1,37 @@
 
-import 'dart:convert';
-
-
-import 'package:crossing_catalogue/services/api_service.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
-import 'package:logger/web.dart';
+import 'package:crossing_catalogue/widgets/home_collection_widget.dart';
+import 'package:crossing_catalogue/widgets/home_villager_widget.dart';
 
-import 'dart:math';
+class HomePage extends StatelessWidget {
+  final VoidCallback onViewVillagers;
+  final VoidCallback onTakeTest;
+  final VoidCallback onViewCollection;
 
-class HomePage extends StatefulWidget{
-  HomePage({
-    super.key, 
-    required this.title});
-
-  final String title;
-  var logger = Logger();
-
-  @override
-  State<StatefulWidget> createState() {
-    return HomePageState();
-  }
-
-}
-
-class HomePageState extends State<HomePage> {
-  
-  var logger = Logger();
-  final String currentTitle = 'Crossing Catalogue';
-
-@override
-  void initState() {
-    super.initState();
-  }
+  const HomePage({
+    super.key,
+    required this.onViewVillagers,
+    required this.onTakeTest,
+    required this.onViewCollection,
+  });
 
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
-      body: Center(child: Text('Home page'),)
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        children: [
+          HomeVillagerWidget(
+            onTakeTest: onTakeTest,
+            onViewVillagers: onViewVillagers,
+          ),
+          const SizedBox(height: 24),
+          HomeCollectionWidget(
+            onViewCollection: onViewCollection,
+          ),
+        ],
+      ),
     );
   }
 }
-
 

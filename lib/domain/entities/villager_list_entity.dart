@@ -10,7 +10,7 @@ class VillagerList {
 
   //var logger = Logger();
 
-  Future<List<Villager>> getJson() async {
+  Future<List<Villager>> getAllVillagers() async {
     villagerJson = await villagerRequest.getVillager('game=nh&nhdetails=true');
     var parsedJson = jsonDecode(villagerJson);
     List<dynamic> villagerListJson = parsedJson;
@@ -26,7 +26,7 @@ class VillagerList {
       var colors = List<String>.from(nhDetailsData['fav_colors']);
       var hobby = nhDetailsData['hobby'];
 
-      var imageUrl = villagerData['image_url'];
+      var imageUrl = villagerData['nh_details']['icon_url'];
 
       Villager villager = Villager(
         name,

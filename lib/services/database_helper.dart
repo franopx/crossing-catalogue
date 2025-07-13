@@ -125,8 +125,12 @@ class DatabaseHelper {
 
   Future<List<ItemData>> getAllItems() async {
     final db = await database;
-    final List<Map<String, dynamic>> maps = await db.query('fishItem');
+    final List<Map<String, dynamic>> fishMap = await db.query('fishItem');
+    final List<Map<String, dynamic>> bugMap = await db.query('bugItem');
+    final List<Map<String, dynamic>> fossilMap = await db.query('fossilItem');
+    final List<Map<String, dynamic>> seaCreatureMap = await db.query('seaCreatureItem');
 
+    final List<Map<String, dynamic>> maps = fishMap + bugMap + fossilMap + seaCreatureMap;
     // Convierte cada Map a un objeto CardData
     return List.generate(maps.length, (i) {
       return ItemData(
@@ -135,7 +139,7 @@ class DatabaseHelper {
         url: maps[i]['url'],
         imageUrl: maps[i]['image_url'],
         renderUrl: maps[i]['render_url'],
-        obtained: maps[i]['render_url'] == 1 ? true : false // String -> DateTime
+        obtained: maps[i]['obtained'] == 1 ? true : false // String -> DateTime
       );
     });
   }
@@ -156,7 +160,7 @@ class DatabaseHelper {
         url: maps[0]['url'],
         imageUrl: maps[0]['image_url'],
         renderUrl: maps[0]['render_url'],
-        obtained: maps[0]['render_url'] == 1 ? true : false // String -> DateTime
+        obtained: maps[0]['obtained'] == 1 ? true : false // String -> DateTime
       );
     }
     return null;

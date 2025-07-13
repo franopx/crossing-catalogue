@@ -42,9 +42,9 @@ class NavPageState extends State<NavPage> {
   }
 
   @override
-  void activate() {
+  void initState() {
     onlineCheck();
-    super.activate();
+    super.initState();
   }
 
   Widget buildContent() {
@@ -72,7 +72,22 @@ class NavPageState extends State<NavPage> {
         setState(() {
           currentTitle = 'Crossing Catalogue';
         });
-        return HomePage(title: 'Crossing Catalogue');
+        return HomePage(
+          onViewVillagers: () {
+              setState(() {
+                currentPage = 2;
+              });
+            }, 
+          onTakeTest: () {
+              setState(() {
+                currentPage = 1;
+              });
+            }, 
+          onViewCollection: () {
+              setState(() {
+                currentPage = 3;
+              });
+            },);
     }
   }
 

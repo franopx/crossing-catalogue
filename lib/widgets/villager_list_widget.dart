@@ -31,7 +31,7 @@ class _VillagerListWidgetState extends State<VillagerListWidget> {
   }
 
   Future<void> fetchVillagers() async {
-    allVillagers = await list.getJson();
+    allVillagers = await list.getAllVillagers();
     
     if(mounted){
       setState(() {
