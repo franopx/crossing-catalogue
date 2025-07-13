@@ -43,7 +43,27 @@ class _QuizState extends State<QuizPage> {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.network(topVillager.villager.imageUrl),
+              Image.network(
+                topVillager.villager.imageUrl,
+                width: 300,
+                height: 450,
+                alignment: Alignment.topCenter,
+                fit: BoxFit.cover,
+                loadingBuilder: (context, child, loadingProgress) {
+                  if (loadingProgress == null) return child;
+
+                  return const SizedBox(
+                    width: 100,
+                    height: 100,
+                    child: Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                  );
+                },
+                errorBuilder: (context, error, stackTrace) {
+                  return const Icon(Icons.error); // o una imagen por defecto
+                },
+              ),
               const SizedBox(height: 8),
               Text(
                 topVillager.villager.name,
