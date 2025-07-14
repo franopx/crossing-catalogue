@@ -1,6 +1,10 @@
 # Crossing Catalogue App
 Crossing Catalogue es una aplicación complementaria para tu partida de Animal Crossing: New Horizons, en esta aplicación encontrarás todo sobre los distintos aldeanos que se encuentran en el juego, encontrar qué aldeano es mejor para tu isla y registrar tu progreso en el juego.
 
+## API utilizada
+Crossing Catalogue trabaja con la API de Nookipedia (la wiki de Animal Crossing)
+para acceder a la documentacion y/o pedir una llave para la API puede visitar: https://api.nookipedia.com
+
 ## Características principales
 - Encuentra todo sobre los 413 aldeanos presentes en Animal Crossing: New Horizons
 - Accede al catálogo de aldeanos, donde podrás ordenar, buscar por texto, clasificar y filtrar para una búsqueda precisa
@@ -14,6 +18,11 @@ El proyecto está estructurado de forma modular, separando la lógica, component
 - lib/providers: Contiene las clases vinculadas a provider, que permite guardar preferencias localmente.
 - lib/services: Contiene clases que vinculan otros servicios con el proyecto, como las APIs y bases de datos.
 
+## Diagrama
+Flujo de pantallas:
+
+![flujo_de_pantallas](https://github.com/user-attachments/assets/4cb7af53-e7cc-4cd2-b7bb-867f43ac15bb)
+
 ## Desarrolladores
 - Matías Oyarzún
 - Francisco Galeno
@@ -21,3 +30,7 @@ El proyecto está estructurado de forma modular, separando la lógica, component
 ## Preferencias
 - Tema
 - Borrar datos guardados
+
+
+## Link al video
+https://youtu.be/EaA4NKDsQ8g
