@@ -26,3 +26,6 @@ Flujo de pantallas:
 ## Desarrolladores
 - Matías Oyarzún
 - Francisco Galeno
+
+## Link al video
+https://youtu.be/EaA4NKDsQ8g
