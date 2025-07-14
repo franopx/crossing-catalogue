@@ -29,3 +29,6 @@ Flujo de pantallas:
 
 ## Link al video
 https://youtu.be/EaA4NKDsQ8g
+
+## Link a APK
+La apk de la aplicación se puede encontrar en la sección de [releases](https://github.com/franopx/crossing-catalogue/releases/tag/apk) del proyecto.
