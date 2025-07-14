@@ -20,6 +20,7 @@ El proyecto está estructurado de forma modular, separando la lógica, component
 
 ## Diagrama
 Flujo de pantallas:
+
 ![flujo_de_pantallas](https://github.com/user-attachments/assets/4cb7af53-e7cc-4cd2-b7bb-867f43ac15bb)
 
 ## Desarrolladores
